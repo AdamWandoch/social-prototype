@@ -2,7 +2,7 @@ import React from 'react';
 import avatars from '../img/avatars/avatars';
 import { Avatar } from './Avatar';
 
-export const AvatarChoice = ({ showChoice, pickAvatar }) => {
+export const AvatarsModal = ({ showChoice, pickAvatar }) => {
   return (
     // implement avatar selection
     <div className='avatars-modal'>

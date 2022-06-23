@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { AvatarChoice } from './AvatarChoice';
-import avatars from '../img/avatars/avatars';
+import { AvatarsModal } from './AvatarsModal';
+import { API_URL } from '../helpers/api_urls';
 import choose from '../img/avatars/choose.svg';
 import { Avatar } from './Avatar';
 
 export const SignIn = ({ setUser }) => {
   const [nickname, setNickname] = useState('');
   const [avatarIndex, setAvatarIndex] = useState(null);
-  const [showAvatarChoice, setShowAvatarChoice] = useState(false);
+  const [showAvatarsModal, setShowAvatarsModal] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    
   };
 
   return (
@@ -32,7 +31,7 @@ export const SignIn = ({ setUser }) => {
               setNickname(e.target.value);
             }}
           />
-          <div onClick={() => setShowAvatarChoice(true)}>
+          <div onClick={() => setShowAvatarsModal(true)}>
             <p className='label'>Choose an avatar:</p>
             {avatarIndex !== null ? (
               <Avatar index={avatarIndex} pickAvatar={setAvatarIndex} />
@@ -41,16 +40,16 @@ export const SignIn = ({ setUser }) => {
                 className='choose-img avatar'
                 src={choose}
                 alt='choose'
-                onClick={() => setShowAvatarChoice(!showAvatarChoice)}
+                onClick={() => setShowAvatarsModal(true)}
               />
             )}
           </div>
           <button className='text-input btn-login'>LOGIN</button>
         </form>
       </div>
-      {showAvatarChoice && (
-        <AvatarChoice
-          showChoice={setShowAvatarChoice}
+      {showAvatarsModal && (
+        <AvatarsModal
+          showChoice={setShowAvatarsModal}
           pickAvatar={setAvatarIndex}
         />
       )}
