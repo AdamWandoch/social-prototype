@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export const Feed = () => {
+export const Feed = (props) => {
+  const [user, setUser] = useState(props.user);
   return (
-    <div>Feed</div>
-  )
-}
+    <div>
+      <p>Feed content here</p>
+      <p>Current User: {user}</p>
+    </div>
+  );
+};

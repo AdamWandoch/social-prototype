@@ -7,11 +7,11 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
-  
+
   return (
     <div className='wrapper'>
       <Header />
-      {user ? <Feed user={user}/> : <SignIn />}
+      {user ? <Feed user={user} /> : <SignIn setUser={setUser} />}
       <Footer />
     </div>
   );

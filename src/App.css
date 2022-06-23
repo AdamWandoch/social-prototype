@@ -1,6 +1,8 @@
 :root {
   --line-thickness: 0.2rem;
   --primary-green: rgb(9, 255, 0);
+  --font-size: 1.5rem;
+  --bg-alpha-1: rgba(255, 255, 255, 0.2);
 }
 
 html,
@@ -13,7 +15,9 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 1rem;
+  margin: 1rem 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: linear-gradient(
     to right,
     rgb(29, 167, 121),
@@ -31,47 +35,57 @@ body {
   align-content: center;
 }
 
+.logo {
+  width: 15rem;
+  margin: auto;
+}
+
 .title {
   margin: auto;
   width: max-content;
   border: solid var(--line-thickness);
   border-radius: 100vh;
   padding: 1rem;
-}
-
-.footer {
-  text-align: center;
+  background-color: var(--bg-alpha-1);
 }
 
 .sign-in {
-  border-radius: 2rem;
+  border-radius: 3rem;
+  border: solid var(--line-thickness);
   padding: 2rem;
   text-align: center;
-  max-width: 500px;
+  min-width: 24rem;
   margin: auto;
+  background-color: var(--bg-alpha-1);
 }
 
 .label {
-  display: block;
-  font-size: x-large;
+  margin: 1rem 0;
   cursor: pointer;
-}
-
-.label:hover {
-  transform: scale(1.05);
 }
 
 .text-input {
   padding: 0.5rem;
   border-radius: 50vh;
-  border: solid 0px;
+  border: none;
   text-align: center;
   width: 100%;
+  font-weight: bold;
+  font-size: var(--font-size);
 }
 
-.btn-submit:hover {
+.btn-login {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: var(--font-size);
+  color: rgb(114, 114, 114);
+}
+
+.btn-login:hover {
   background-color: var(--primary-green);
   cursor: pointer;
+  transform: translateY(-2px);
 }
 
 .choose-img:hover {
@@ -92,6 +106,7 @@ body {
   border-radius: 100vh;
   padding: 0.5rem;
   width: 8rem;
+  background-color: var(--bg-alpha-1);
 }
 
 .avatar:hover {
@@ -102,6 +117,10 @@ body {
 
 .avatar-name {
   text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .avatar-wrapper {
@@ -116,11 +135,19 @@ body {
 }
 
 .avatars-modal {
-  background-color: rgba(30, 54, 53, 0.98);
+  background-color: rgba(12, 48, 46, 0.98);
   border-radius: 3rem;
   position: absolute;
   top: 0px;
   z-index: 10;
   justify-self: center;
   padding: 0 3rem;
+}
+
+.footer {
+  font-size: small;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
