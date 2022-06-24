@@ -109,6 +109,10 @@ body {
   background-color: var(--bg-alpha-1);
 }
 
+.avatar-big {
+  width: 16rem;
+}
+
 .avatar:hover {
   transform: scale(1.05);
   border-color: var(--primary-green);
@@ -150,4 +154,8 @@ body {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.feed {
+  text-align: center;
 }

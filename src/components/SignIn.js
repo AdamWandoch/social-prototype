@@ -3,13 +3,25 @@ import { AvatarsModal } from './AvatarsModal';
 import { API_URL } from '../helpers/api_urls';
 import choose from '../img/avatars/choose.svg';
 import { Avatar } from './Avatar';
+import axios from 'axios';
 
-export const SignIn = ({ setUser }) => {
+export const SignIn = ({ setUserId }) => {
   const [nickname, setNickname] = useState('');
   const [avatarIndex, setAvatarIndex] = useState(null);
   const [showAvatarsModal, setShowAvatarsModal] = useState(false);
-  const handleSubmit = (e) => {
+  
+  const signIn = (e) => {
     e.preventDefault();
+    const postUser = async () => {
+      const user = {
+        id: 0,
+        nickname: nickname,
+        avatar: avatarIndex,
+      };
+      const resp = await axios.post(API_URL + 'post', user);
+      setUserId(resp.data);
+    };
+    postUser();
   };
 
   return (
@@ -19,14 +31,14 @@ export const SignIn = ({ setUser }) => {
         pick an avatar and enjoy!
       </h2>
       <div className='sign-in'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={signIn}>
           <input
             className='text-input'
             type='text'
-            name='nickname'
             id='nickname'
             value={nickname}
             placeholder='enter your nickname'
+            required
             onChange={(e) => {
               setNickname(e.target.value);
             }}

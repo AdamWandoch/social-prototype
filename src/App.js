@@ -6,12 +6,16 @@ import { Feed } from './components/Feed';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   return (
     <div className='wrapper'>
       <Header />
-      {user ? <Feed user={user} /> : <SignIn setUser={setUser} />}
+      {userId ? (
+        <Feed userId={userId} logout={setUserId} />
+      ) : (
+        <SignIn setUserId={setUserId} />
+      )}
       <Footer />
     </div>
   );
