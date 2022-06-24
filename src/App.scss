@@ -13,7 +13,11 @@ body {
   margin: 1rem 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(to right, rgb(29, 167, 121), rgb(17, 104, 155));
+  background-image: linear-gradient(
+    to right,
+    rgb(29, 167, 121),
+    rgb(17, 104, 155)
+  );
 }
 
 .wrapper {
@@ -33,8 +37,6 @@ body {
 
 .title {
   margin: auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   border: solid var(--line-thickness);
   border-radius: 100vh;
@@ -129,22 +131,22 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-}
-@media (min-width: 500px) {
-  .avatars {
+
+  @media (min-width: 500px) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-@media (min-width: 750px) {
-  .avatars {
+  @media (min-width: 750px) {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-@media (min-width: 1000px) {
-  .avatars {
+  @media (min-width: 1000px) {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
+// @media (min-width: 400px) {
+//   grid-template-columns: repeat(3, 1fr);
+
+// }
 
 .avatars-modal {
   background-color: rgba(12, 48, 46, 0.98);
@@ -154,19 +156,20 @@ body {
   z-index: 10;
   justify-self: center;
   padding: 0 3rem;
-  width: 100%;
+  width: 100%
 }
 
 .footer {
   font-size: small;
 }
 
+.feed {
+}
+
 .signed-in-user {
   display: grid;
   grid-template-columns: 4rem 1fr auto;
   align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   background-color: var(--bg-alpha-1);
   border-radius: 3rem;
@@ -174,73 +177,83 @@ body {
   padding: 0.5rem;
   margin: 0.5rem auto;
   min-width: 24rem;
-}
-.signed-in-user .door {
-  width: 2rem;
-  color: #fff;
-  margin-left: 0.5rem;
-  transform: rotate(180deg);
-}
-.signed-in-user .door:hover {
-  transform: scale(1.05) rotate(180deg);
-}
-.signed-in-user .icon {
-  border: solid var(--line-thickness);
-  border-radius: 100vh;
-  padding: 0.5rem;
-  background-color: var(--bg-alpha-1);
-  margin-right: 0.5rem;
-  padding: 0;
-}
-.signed-in-user img {
-  cursor: pointer;
+
+  .door {
+    width: 2rem;
+    color: #fff;
+    margin-left: 0.5rem;
+    transform: rotate(180deg);
+  }
+
+  .door:hover {
+    transform: scale(1.05) rotate(180deg);
+  }
+
+  .icon {
+    border: solid var(--line-thickness);
+    border-radius: 100vh;
+    padding: 0.5rem;
+    background-color: var(--bg-alpha-1);
+    margin-right: 0.5rem;
+    padding: 0;
+  }
+
+  img {
+    cursor: pointer;
+  }
 }
 
-.post-edit-form .top-icon {
-  width: 2rem;
-  margin-bottom: -10px;
-  margin-left: 50%;
-  transform: translateX(-500%);
+.post-edit-form {
+  .top-icon {
+    width: 2rem;
+    margin-bottom: -10px;
+    margin-left: 50%;
+    transform: translateX(-500%);
+  }
+
+  .form {
+    border: solid var(--line-thickness);
+    border-radius: 3rem;
+    background-color: var(--bg-alpha-1);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 0;
+    padding: 1rem;
+
+    .content-input {
+      width: 100%;
+      padding: 1rem 0;
+      border-radius: 1rem;
+      border: none;
+      margin: auto;
+      margin-top: 1rem;
+      font-family: Poppins, sans-serif;
+      text-align: center;
+    }
+
+    button {
+      padding: 1rem;
+      background-color: var(--bg-alpha-1);
+      border-radius: 1rem;
+      text-transform: uppercase;
+      border: solid var(--line-thickness);
+      color: #fff;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+  }
+
+  .icon {
+    border: solid var(--line-thickness);
+    border-radius: 100vh;
+    padding: 0.5rem;
+    background-color: var(--bg-alpha-1);
+    margin-right: 0.5rem;
+    padding: 0;
+    width: 2rem;
+  }
+  .says {
+    font-size: 0.8rem;
+    margin-left: 2rem;
+  }
 }
-.post-edit-form .form {
-  border: solid var(--line-thickness);
-  border-radius: 3rem;
-  background-color: var(--bg-alpha-1);
-  max-width: 600px;
-  margin: auto;
-  margin-top: 0;
-  padding: 1rem;
-}
-.post-edit-form .form .content-input {
-  width: 100%;
-  padding: 1rem 0;
-  border-radius: 1rem;
-  border: none;
-  margin: auto;
-  margin-top: 1rem;
-  font-family: Poppins, sans-serif;
-  text-align: center;
-}
-.post-edit-form .form button {
-  padding: 1rem;
-  background-color: var(--bg-alpha-1);
-  border-radius: 1rem;
-  text-transform: uppercase;
-  border: solid var(--line-thickness);
-  color: #fff;
-  margin-top: 0.5rem;
-  width: 100%;
-}
-.post-edit-form .icon {
-  border: solid var(--line-thickness);
-  border-radius: 100vh;
-  padding: 0.5rem;
-  background-color: var(--bg-alpha-1);
-  margin-right: 0.5rem;
-  padding: 0;
-  width: 2rem;
-}
-.post-edit-form .says {
-  font-size: 0.8rem;
-  margin-left: 2rem;
-}/*# sourceMappingURL=App.css.map */

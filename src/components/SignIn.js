@@ -16,7 +16,7 @@ export const SignIn = ({ setUserId }) => {
       const user = {
         id: 0,
         nickname: nickname,
-        avatar: avatarIndex,
+        avatarId: avatarIndex,
       };
       const resp = await axios.post(API_URL + 'post', user);
       setUserId(resp.data);
