@@ -6,6 +6,11 @@
   --max-width: 600px;
 }
 
+html,
+body {
+  min-width: 100vw;
+}
+
 body {
   font-family: Poppins, sans-serif;
   color: #fff;
@@ -135,8 +140,13 @@ body a:visited {
 
 .avatars {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+}
+@media (min-width: 420px) {
+  .avatars {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 500px) {
   .avatars {
