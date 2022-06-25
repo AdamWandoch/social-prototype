@@ -9,7 +9,7 @@ export const SignIn = ({ setUserId }) => {
   const [nickname, setNickname] = useState('');
   const [avatarIndex, setAvatarIndex] = useState(null);
   const [showAvatarsModal, setShowAvatarsModal] = useState(false);
-  
+
   const signIn = (e) => {
     e.preventDefault();
     const postUser = async () => {
@@ -18,7 +18,7 @@ export const SignIn = ({ setUserId }) => {
         nickname: nickname,
         avatarId: avatarIndex,
       };
-      const resp = await axios.post(API_URL + 'post', user);
+      const resp = await axios.post(API_URL.concat('user/post'), user);
       setUserId(resp.data);
     };
     postUser();
@@ -37,7 +37,7 @@ export const SignIn = ({ setUserId }) => {
             type='text'
             id='nickname'
             value={nickname}
-            placeholder='enter your nickname'
+            placeholder='your nickname here'
             required
             onChange={(e) => {
               setNickname(e.target.value);

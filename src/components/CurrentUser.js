@@ -12,7 +12,7 @@ export const CurrentUser = ({ user, signout }) => {
         className='icon'
       />
       <p>
-        Signed in as {user.nickname} the{' '}
+        Signed in as {capitalize(user.nickname)} the{' '}
         {capitalize(avatars[user.avatarId].name)}
       </p>
       <img

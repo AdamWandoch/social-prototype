@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 import avatars from '../img/avatars/avatars';
-import { capitalize } from '../helpers/utils';
+import { capitalize, getShortDate } from '../helpers/utils';
+import axios from 'axios';
+import { API_URL } from '../helpers/api_urls';
 
 export const PostEditForm = ({ user }) => {
   const [content, setContent] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('state: ' + content);
+    const postPost = async () => {
+      const post = {
+        id: 0,
+        userId: user.id,
+        content: content,
+        timestamp: getShortDate(),
+      };
+      const resp = await axios.post(API_URL.concat('post/post'), post);
+    };
+    postPost();
+    setContent('');
   };
 
   return (
@@ -19,7 +31,8 @@ export const PostEditForm = ({ user }) => {
       />
       <div className='form'>
         <label htmlFor='content' className='says'>
-          {capitalize(user.nickname)} says:
+          Write a post {capitalize(user.nickname)}! The{' '}
+          {capitalize(avatars[user.avatarId].name)} way!
         </label>
         <form onSubmit={handleSubmit}>
           <textarea
@@ -27,12 +40,18 @@ export const PostEditForm = ({ user }) => {
             name='content'
             id='content'
             className='content-input'
+            required
             rows={5}
             value={content}
-            placeholder='your thoughts to go here :)'
+            placeholder='Who wants help bulding UI? Leave details here!'
             onChange={(e) => {
               setContent(e.target.value);
             }}
+          />
+          <img
+            src={avatars[user.avatarId].icon}
+            alt={avatars[user.avatarId].name}
+            className='top-icon left'
           />
           <button>submit</button>
         </form>
