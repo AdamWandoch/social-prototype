@@ -177,6 +177,7 @@ body a:visited {
 
 .footer {
   font-size: small;
+  margin-top: 1rem;
 }
 
 .signed-in-user {
