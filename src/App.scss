@@ -161,13 +161,12 @@ body {
 
 .avatars-modal {
   background-color: rgba(12, 48, 46, 0.98);
-  border-radius: 3rem;
   position: absolute;
   top: 0px;
   z-index: 10;
   justify-self: center;
   padding: 0 3rem;
-  width: 100%;
+  width: 100vw;
 }
 
 .footer {

@@ -15,7 +15,7 @@ export const Feed = ({ userId, logout }) => {
       setTimeout(() => {
         setIsLoading(false);
         setCurrentUser(resp.data);
-      }, 3000);
+      }, 1000);
     });
   }, []);
 
