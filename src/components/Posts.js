@@ -16,7 +16,7 @@ export const Posts = () => {
     };
     setInterval(() => {
       getPosts();
-    }, 500);
+    }, 1000);
   }, []);
 
   return (

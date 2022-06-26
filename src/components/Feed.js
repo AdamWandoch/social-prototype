@@ -13,9 +13,9 @@ export const Feed = ({ userId, logout }) => {
   useEffect(() => {
     axios.get(API_URL.concat('user/' + userId)).then((resp) => {
       setTimeout(() => {
-        setCurrentUser(resp.data);
         setIsLoading(false);
-      }, 5000);
+        setCurrentUser(resp.data);
+      }, 3000);
     });
   }, []);
 

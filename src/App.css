@@ -220,7 +220,7 @@ body a:visited {
   width: 2rem;
   margin-bottom: -15px;
   margin-left: 50%;
-  transform: translateX(500%);
+  transform: translateX(400%);
   filter: drop-shadow(0 0 10px rgb(0, 255, 200));
 }
 .post-edit-form .left, .post-wrapper .left {
@@ -276,21 +276,18 @@ body a:visited {
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: linear-gradient(to right, rgb(105, 124, 189), rgb(17, 104, 155));
   display: grid;
 }
 .spinner img {
-  -webkit-animation: spin 2.5s infinite ease-in-out alternate;
-          animation: spin 2.5s infinite ease-in-out alternate;
-  width: 20rem;
+  -webkit-animation: spin 2.5s infinite linear;
+          animation: spin 2.5s infinite linear;
+  width: 30%;
   margin: auto;
+  filter: drop-shadow(0 0 4rem #fff);
 }
 @-webkit-keyframes spin {
   from {
     transform: rotate(0deg);
-    filter: blur(50px) saturate(0) drop-shadow(0 0 10px #fff);
   }
   to {
     transform: rotate(1440deg);
@@ -299,7 +296,6 @@ body a:visited {
 @keyframes spin {
   from {
     transform: rotate(0deg);
-    filter: blur(50px) saturate(0) drop-shadow(0 0 10px #fff);
   }
   to {
     transform: rotate(1440deg);
@@ -320,11 +316,11 @@ body a:visited {
   margin-bottom: -42px;
 }
 .post-wrapper .up {
-  transform: translateY(-65px) translateX(300%);
+  transform: translateY(-65px) translateX(200%);
   width: 3.5rem;
 }
 .post-wrapper .left {
-  transform: translateX(-380%);
+  transform: translateX(-200%);
 }
 .post-wrapper .timestamp, .post-wrapper .signature {
   font-size: x-small;

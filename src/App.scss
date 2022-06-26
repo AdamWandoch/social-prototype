@@ -159,11 +159,6 @@ body {
   }
 }
 
-// @media (min-width: 400px) {
-//   grid-template-columns: repeat(3, 1fr);
-
-// }
-
 .avatars-modal {
   background-color: rgba(12, 48, 46, 0.98);
   border-radius: 3rem;
@@ -226,7 +221,7 @@ body {
     width: 2rem;
     margin-bottom: -15px;
     margin-left: 50%;
-    transform: translateX(500%);
+    transform: translateX(400%);
     filter: drop-shadow(0 0 10px rgb(0, 255, 200));
   }
 
@@ -289,25 +284,18 @@ body {
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: linear-gradient(
-    to right,
-    rgb(105, 124, 189),
-    rgb(17, 104, 155)
-  );
   display: grid;
 
   img {
-    animation: spin 2.5s infinite ease-in-out alternate;
-    width: 20rem;
+    animation: spin 2.5s infinite linear;
+    width: 30%;
     margin: auto;
+    filter: drop-shadow(0 0 4rem #fff);
   }
 
   @keyframes spin {
     from {
       transform: rotate(0deg);
-      filter: blur(50px) saturate(0) drop-shadow(0 0 10px #fff);
     }
     to {
       transform: rotate(1440deg);
@@ -334,12 +322,12 @@ body {
   }
 
   .up {
-    transform: translateY(-65px) translateX(300%);
+    transform: translateY(-65px) translateX(200%);
     width: 3.5rem;
   }
 
   .left {
-    transform: translateX(-380%);
+    transform: translateX(-200%);
   }
 
   .timestamp {

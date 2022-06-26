@@ -31,8 +31,7 @@ export const PostEditForm = ({ user }) => {
       />
       <div className='form'>
         <label htmlFor='content' className='says'>
-          Write a post {capitalize(user.nickname)}! The{' '}
-          {capitalize(avatars[user.avatarId].name)} way!
+          Write a post {capitalize(user.nickname)}!
         </label>
         <form onSubmit={handleSubmit}>
           <textarea
