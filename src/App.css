@@ -6,9 +6,17 @@
   --max-width: 600px;
 }
 
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
-  min-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -28,7 +36,6 @@ body a:visited {
 
 .wrapper {
   max-width: var(--max-width);
-  min-height: 95vh;
   margin: auto;
   display: grid;
   align-items: center;
@@ -49,9 +56,15 @@ body a:visited {
   width: -moz-max-content;
   width: max-content;
   border: solid var(--line-thickness);
-  border-radius: 100vh;
+  border-radius: 3rem;
   padding: 1rem;
   background-color: var(--bg-alpha-1);
+  font-size: 1.5rem;
+}
+@media (min-width: 450px) {
+  .title {
+    font-size: 2rem;
+  }
 }
 
 .sign-in {
@@ -59,7 +72,6 @@ body a:visited {
   border: solid var(--line-thickness);
   padding: 2rem;
   text-align: center;
-  min-width: 24rem;
   margin: auto;
   background-color: var(--bg-alpha-1);
 }
