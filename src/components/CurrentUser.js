@@ -11,10 +11,7 @@ export const CurrentUser = ({ user, signout }) => {
         alt={avatars[user.avatarId].name}
         className='icon'
       />
-      <p>
-        Signed in as {capitalize(user.nickname)} the{' '}
-        {capitalize(avatars[user.avatarId].name)}
-      </p>
+      <p>Signed in as {capitalize(user.nickname)}</p>
       <img
         src={exitIcon}
         alt='sign out'
