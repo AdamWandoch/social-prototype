@@ -37,7 +37,7 @@ export const SignIn = ({ setUserId }) => {
             type='text'
             id='nickname'
             value={nickname}
-            placeholder='your nickname here'
+            placeholder='your nickname'
             required
             onChange={(e) => {
               setNickname(e.target.value);
