@@ -106,6 +106,16 @@ body {
   transform: translateY(-2px);
 }
 
+.btn {
+  @extend .btn-login;
+  padding: 0.5rem;
+  background-color: var(--bg-alpha-1);
+  border-radius: 1rem;
+  text-transform: uppercase;
+  border: solid var(--line-thickness);
+  color: #fff;
+}
+
 .choose-img:hover {
   transform: scale(1.05);
   cursor: pointer;
@@ -368,4 +378,11 @@ body {
       font-size: large;
     }
   }
+}
+
+.error {
+  display: grid;
+  min-height: 40vh;
+  justify-items: center;
+  align-content: center;
 }

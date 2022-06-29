@@ -92,7 +92,7 @@ body a:visited {
   color: #1f2e2e;
 }
 
-.btn-login {
+.btn-login, .btn {
   font-family: Poppins, sans-serif;
   font-weight: bold;
   margin-top: 2rem;
@@ -100,10 +100,19 @@ body a:visited {
   color: rgb(114, 114, 114);
 }
 
-.btn-login:hover {
+.btn-login:hover, .btn:hover {
   background-color: var(--primary-green);
   cursor: pointer;
   transform: translateY(-2px);
+}
+
+.btn {
+  padding: 0.5rem;
+  background-color: var(--bg-alpha-1);
+  border-radius: 1rem;
+  text-transform: uppercase;
+  border: solid var(--line-thickness);
+  color: #fff;
 }
 
 .choose-img:hover {
@@ -358,4 +367,11 @@ body a:visited {
   .post-wrapper .signature {
     font-size: large;
   }
+}
+
+.error {
+  display: grid;
+  min-height: 40vh;
+  justify-items: center;
+  align-content: center;
 }/*# sourceMappingURL=App.css.map */
