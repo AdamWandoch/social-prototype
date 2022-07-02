@@ -12,8 +12,8 @@ export const Feed = ({ userId, logout }) => {
 
   useEffect(() => {
     axios.get(API_URL.concat('user/' + userId)).then((resp) => {
-        setIsLoading(false);
-        setCurrentUser(resp.data);
+      setIsLoading(false);
+      setCurrentUser(resp.data);
     });
   }, []);
 
@@ -21,7 +21,7 @@ export const Feed = ({ userId, logout }) => {
     <div className='feed'>
       {currentUser && <CurrentUser user={currentUser} signout={logout} />}
       {currentUser && <PostEditForm user={currentUser} />}
-      {isLoading ? <Spinner /> : <Posts />}
+      {isLoading ? <Spinner /> : <Posts user={currentUser} />}
     </div>
   );
 };

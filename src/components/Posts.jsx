@@ -4,7 +4,7 @@ import { Post } from './Post';
 import { API_URL } from '../helpers/api_urls';
 import axios from 'axios';
 
-export const Posts = () => {
+export const Posts = ({ user }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
@@ -24,7 +24,9 @@ export const Posts = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        posts.map((post, index) => <Post key={index} post={post} />)
+        posts.map((post, index) => (
+          <Post key={index} post={post} currentUser={user} />
+        ))
       )}
     </>
   );
