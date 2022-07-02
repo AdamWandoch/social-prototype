@@ -384,7 +384,7 @@ body a:visited {
   display: flex;
   gap: 1rem;
   justify-self: right;
-  align-items: center;
+  align-items: flex-end;
   margin-right: 1rem;
 }
 .post-wrapper .like-btn {
@@ -444,10 +444,4 @@ body a:visited {
 .footer {
   font-size: small;
   margin-top: 1rem;
-}
-
-* {
-  outline-color: red;
-  outline-style: dashed;
-  outline-width: 1px;
 }/*# sourceMappingURL=App.css.map */
