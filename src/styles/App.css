@@ -362,6 +362,41 @@ body a:visited {
   width: 4rem;
   margin-bottom: -42px;
 }
+.post-wrapper .post-content {
+  grid-row: span 2;
+  padding: 1rem;
+  display: flex;
+  justify-self: right;
+  align-items: center;
+  justify-content: center;
+  border: solid var(--line-thickness);
+  border-radius: 1rem;
+  width: 90%;
+  background-color: var(--clr-bg-alpha-2);
+}
+.post-wrapper .post-content::before,
+.post-wrapper .post-content::after {
+  content: '"';
+  font-size: 1.3rem;
+  color: var(--clr-pr-white-200);
+}
+.post-wrapper .likesNcomments {
+  display: flex;
+  gap: 1rem;
+  justify-self: right;
+  align-items: center;
+  margin-right: 1rem;
+}
+.post-wrapper .like-btn {
+  width: 2rem;
+}
+.post-wrapper .like-btn:hover,
+.post-wrapper .like-btn:focus {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 10px var(--clr-glow));
+  border-radius: 3px;
+  cursor: pointer;
+}
 .post-wrapper .up {
   transform: translateY(-65px) translateX(200%);
   width: 3rem;
@@ -382,7 +417,7 @@ body a:visited {
   width: -moz-max-content;
   width: max-content;
   border-radius: 0.5rem;
-  margin-top: 1rem;
+  margin: 0.5rem 0;
   filter: drop-shadow(0 0 5px var(--clr-glow));
 }
 .post-wrapper .signature {
@@ -396,24 +431,6 @@ body a:visited {
     font-size: large;
   }
 }
-.post-wrapper .post-content {
-  grid-row: span 3;
-  padding: 1rem;
-  display: flex;
-  justify-self: right;
-  align-items: center;
-  justify-content: center;
-  border: solid var(--line-thickness);
-  border-radius: 1rem;
-  width: 90%;
-  background-color: var(--clr-bg-alpha-2);
-}
-.post-wrapper .post-content::before,
-.post-wrapper .post-content::after {
-  content: '"';
-  font-size: 1.3rem;
-  color: var(--clr-pr-white-200);
-}
 
 .error {
   display: grid;
@@ -425,4 +442,10 @@ body a:visited {
 .footer {
   font-size: small;
   margin-top: 1rem;
+}
+
+* {
+  outline-color: red;
+  outline-style: dashed;
+  outline-width: 1px;
 }/*# sourceMappingURL=App.css.map */

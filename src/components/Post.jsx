@@ -4,6 +4,7 @@ import axios from 'axios';
 import { API_URL } from '../helpers/api_urls';
 import { Spinner } from './Spinner';
 import { capitalize } from '../helpers/utils';
+import { LikeButton } from './LikeButton';
 
 export const Post = ({ post }) => {
   const [user, setUser] = useState();
@@ -30,6 +31,10 @@ export const Post = ({ post }) => {
             <div className='post-content'>{post.content}</div>
             <img src={avatars[user.avatarId].icon} className='avatar' />
             <p className='timestamp'>{post.timestamp}</p>
+            <section className='likesNcomments'>
+              <p>{post.likes} Likes</p>
+              <LikeButton userId={user.id} postId={post.id} />
+            </section>
           </>
         )}
       </div>
