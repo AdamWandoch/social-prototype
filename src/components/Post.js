@@ -19,25 +19,20 @@ export const Post = ({ post }) => {
   }, [user]);
 
   return (
-    <div className='post-wrapper'>
+    <article className='post-wrapper'>
       {isLoading && <Spinner />}
-      {user && (
-        <img src={avatars[user.avatarId].icon} className='top-icon left' />
-      )}
       <div className='post'>
         {user && (
-          <p>
+          <>
             <span className='signature'>
               {user.nickname} the {capitalize(avatars[user.avatarId].name)}:{' '}
             </span>
-            {post.content}
-          </p>
+            <div className='post-content'>{post.content}</div>
+            <img src={avatars[user.avatarId].icon} className='avatar' />
+            <p className='timestamp'>{post.timestamp}</p>
+          </>
         )}
-        <p className='timestamp'>{post.timestamp}</p>
       </div>
-      {user && (
-        <img src={avatars[user.avatarId].icon} className='top-icon up' />
-      )}
-    </div>
+    </article>
   );
 };

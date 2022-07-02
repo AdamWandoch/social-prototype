@@ -51,12 +51,12 @@ export const SignIn = ({ setUserId }) => {
               <img
                 className='choose-img avatar'
                 src={choose}
-                alt='choose'
+                alt='choose avatar icon'
                 onClick={() => setShowAvatarsModal(true)}
               />
             )}
           </div>
-          <button className='text-input btn-login'>LOGIN</button>
+          <button className='btn'>login</button>
         </form>
       </div>
       {showAvatarsModal && (

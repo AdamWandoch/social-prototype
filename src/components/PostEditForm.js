@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import avatars from '../img/avatars/avatars';
-import { capitalize, getShortDate } from '../helpers/utils';
-import axios from 'axios';
 import { API_URL } from '../helpers/api_urls';
+import { capitalize, getShortDate } from '../helpers/utils';
+import avatars from '../img/avatars/avatars';
+import axios from 'axios';
 
 export const PostEditForm = ({ user }) => {
   const [content, setContent] = useState('');
@@ -23,14 +23,14 @@ export const PostEditForm = ({ user }) => {
   };
 
   return (
-    <div className='post-edit-form'>
+    <section className='post-edit-form'>
       <img
         src={avatars[user.avatarId].icon}
         alt={avatars[user.avatarId].name}
         className='top-icon'
       />
       <div className='form'>
-        <label htmlFor='content' className='says'>
+        <label htmlFor='content'>
           Write a post {capitalize(user.nickname)}!
         </label>
         <form onSubmit={handleSubmit}>
@@ -42,7 +42,7 @@ export const PostEditForm = ({ user }) => {
             required
             rows={5}
             value={content}
-            placeholder='Who wants help bulding UI? Leave details here!'
+            placeholder='Need free help bulding UI? Leave details here!'
             onChange={(e) => {
               setContent(e.target.value);
             }}
@@ -52,9 +52,9 @@ export const PostEditForm = ({ user }) => {
             alt={avatars[user.avatarId].name}
             className='top-icon left'
           />
-          <button>submit</button>
+          <button className='btn'>submit</button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
