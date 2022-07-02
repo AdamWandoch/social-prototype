@@ -33,7 +33,7 @@ export const Post = ({ post, currentUser }) => {
             <p className='timestamp'>{post.timestamp}</p>
             <section className='likesNcomments'>
               <p>{post.likes} Likes</p>
-              <LikeButton userId={currentUser.id} postId={post.id} />
+              <LikeButton userId={currentUser.id} post={post} />
             </section>
           </>
         )}
