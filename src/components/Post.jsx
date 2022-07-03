@@ -17,7 +17,7 @@ export const Post = ({ post, currentUser }) => {
       setIsLoading(false);
     };
     getUser();
-  }, [user]);
+  }, []);
 
   return (
     <article className='post-wrapper'>

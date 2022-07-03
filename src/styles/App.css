@@ -428,11 +428,6 @@ body a:visited {
   color: var(--clr-main);
   padding: 0.3rem 1rem;
 }
-@media (min-width: 600px) {
-  .post-wrapper .signature {
-    font-size: large;
-  }
-}
 
 .error {
   display: grid;
