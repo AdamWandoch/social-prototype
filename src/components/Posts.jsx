@@ -1,33 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Spinner } from './Spinner';
+import React from 'react';
 import { Post } from './Post';
-import { API_URL } from '../helpers/api_urls';
-import axios from 'axios';
 
-export const Posts = ({ user }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const resp = await axios.get(API_URL.concat('post/getall'));
-      setIsLoading(false);
-      setPosts(resp.data);
-    };
-    setInterval(() => {
-      getPosts();
-    }, 1000);
-  }, []);
-
+export const Posts = ({ user, posts, broadcastTrigger }) => {
   return (
     <>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        posts.map((post, index) => (
-          <Post key={index} post={post} currentUser={user} />
-        ))
-      )}
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          post={post}
+          currentUser={user}
+          broadcastTrigger={broadcastTrigger}
+        />
+      ))}
     </>
   );
 };

@@ -4,7 +4,7 @@ import { capitalize, getShortDate } from '../helpers/utils';
 import avatars from '../img/avatars/avatars';
 import axios from 'axios';
 
-export const PostEditForm = ({ user }) => {
+export const PostEditForm = ({ user, broadcastTrigger }) => {
   const [content, setContent] = useState('');
 
   const handleSubmit = (e) => {
@@ -20,6 +20,7 @@ export const PostEditForm = ({ user }) => {
     };
     postPost();
     setContent('');
+    broadcastTrigger();
   };
 
   return (
