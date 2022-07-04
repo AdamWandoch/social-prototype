@@ -3,7 +3,7 @@ import { API_URL } from '../helpers/api_urls';
 import like from '../img/like.svg';
 import axios from 'axios';
 
-export const LikeButton = ({ userId, post }) => {
+export const LikeButton = ({ userId, post, broadcastTrigger }) => {
   const [isGlowing, setIsGlowing] = useState(
     post.usersThatLiked.includes(userId)
   );
@@ -14,6 +14,7 @@ export const LikeButton = ({ userId, post }) => {
     });
     setIsGlowing(true);
     console.log(resp.data);
+    broadcastTrigger();
   };
 
   return (
