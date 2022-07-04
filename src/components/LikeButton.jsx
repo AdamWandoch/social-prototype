@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { API_URL } from '../helpers/api_urls';
 import like from '../img/like.svg';
+import liked from '../img/liked.svg';
 import axios from 'axios';
 
 export const LikeButton = ({ userId, post, broadcastTrigger }) => {
@@ -19,7 +20,7 @@ export const LikeButton = ({ userId, post, broadcastTrigger }) => {
 
   return (
     <img
-      src={like}
+      src={isGlowing ? liked : like}
       className={isGlowing ? 'like-btn liked' : 'like-btn'}
       alt='like'
       onClick={() => sendAlike(userId, post.id)}

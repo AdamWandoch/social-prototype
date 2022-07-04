@@ -21,6 +21,7 @@
   --clr-bg-alpha-1: hsla(0, 0%, 100%, 0.3);
   --clr-bg-alpha-2: hsla(0, 0%, 100%, 0.15);
   --clr-glow: hsl(167, 100%, 50%);
+  --clr-glow-2: #206052;
   --clr-bg-avatars-modal: hsla(177, 60%, 12%, 0.98);
 
   // SIZES
@@ -415,7 +416,11 @@ body {
 
   .liked {
     filter: drop-shadow(0 0 10px var(--clr-main));
-    transform: scale(1.1);
+    transform: scale(1.3);
+    border: solid 2px var(--clr-glow-2);
+    border-radius: 5rem;
+    padding: 1px;
+
   }
 
   .up {

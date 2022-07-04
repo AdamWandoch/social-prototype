@@ -54,9 +54,14 @@ export const Feed = ({ userId, logout }) => {
 
   return (
     <div className='feed'>
-      {currentUser && <CurrentUser user={currentUser} signout={logout} />}
       {currentUser && (
-        <PostEditForm user={currentUser} broadcastTrigger={broadcastTrigger} />
+        <>
+          <CurrentUser user={currentUser} signout={logout} />
+          <PostEditForm
+            user={currentUser}
+            broadcastTrigger={broadcastTrigger}
+          />
+        </>
       )}
       {isLoading ? (
         <Spinner />
