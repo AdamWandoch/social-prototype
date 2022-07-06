@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../helpers/api_urls';
+import { WEBSOCKET_URL } from '../helpers/api_urls';
 import { CurrentUser } from './CurrentUser';
 import { PostEditForm } from './PostEditForm';
 import { Spinner } from './Spinner';
@@ -25,13 +26,13 @@ export const Feed = ({ userId, logout }) => {
   }, []);
 
   const connect = () => {
-    let Sock = new SockJS('http://localhost:5000/ws');
+    let Sock = new SockJS(WEBSOCKET_URL);
     stompClient = over(Sock);
     stompClient.connect({}, onConnected, onError);
   };
 
   const onConnected = () => {
-    stompClient.subscribe('/feed-clients', fetchData);
+    stompClient.subscribe('/feed-clients', onMessageReceived);
   };
 
   const onError = (err) => {
@@ -44,8 +45,11 @@ export const Feed = ({ userId, logout }) => {
     }
   };
 
-  const fetchData = async (payload) => {
-    payload && console.log(payload.body);
+  const onMessageReceived = (payload) => {
+    payload && setPosts(JSON.parse(payload.body));
+  };
+
+  const fetchData = async () => {
     const resp = await axios.get(API_URL.concat('post/getall'));
     console.log(resp.data);
     setPosts(resp.data);
