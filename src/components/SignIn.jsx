@@ -5,7 +5,7 @@ import choose from '../img/avatars/choose.svg';
 import { Avatar } from './Avatar';
 import axios from 'axios';
 
-export const SignIn = ({ setUserId }) => {
+export const SignIn = ({ setUser }) => {
   const [nickname, setNickname] = useState('');
   const [avatarIndex, setAvatarIndex] = useState(null);
   const [showAvatarsModal, setShowAvatarsModal] = useState(false);
@@ -19,7 +19,7 @@ export const SignIn = ({ setUserId }) => {
         avatarId: avatarIndex,
       };
       const resp = await axios.post(API_URL.concat('user/post'), user);
-      setUserId(resp.data);
+      setUser(resp.data);
     };
     postUser();
   };

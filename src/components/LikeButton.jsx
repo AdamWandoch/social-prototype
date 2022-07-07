@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { FeedContext } from './Feed';
+import { GlobalContext } from '../contexts/GlobalContext';
 import { API_URL } from '../helpers/api_urls';
 import like from '../img/like.svg';
 import liked from '../img/liked.svg';
 import axios from 'axios';
 
-export const LikeButton = ({ userId, post, broadcastTrigger }) => {
+export const LikeButton = ({ post }) => {
+  const { user } = useContext(GlobalContext);
+  const { broadcastTrigger } = useContext(FeedContext);
   const [isGlowing, setIsGlowing] = useState(
-    post.usersThatLiked.includes(userId)
+    post.usersThatLiked.includes(user.id)
   );
 
   const sendAlike = async (user, post) => {
@@ -23,7 +27,7 @@ export const LikeButton = ({ userId, post, broadcastTrigger }) => {
       src={isGlowing ? liked : like}
       className={isGlowing ? 'like-btn liked' : 'like-btn'}
       alt='like'
-      onClick={() => sendAlike(userId, post.id)}
+      onClick={() => sendAlike(user.id, post.id)}
     />
   );
 };

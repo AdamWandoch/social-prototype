@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { API_URL } from '../helpers/api_urls';
 import { capitalize, getShortDate } from '../helpers/utils';
+import { GlobalContext } from '../contexts/GlobalContext';
 import avatars from '../img/avatars/avatars';
 import axios from 'axios';
 
-export const PostEditForm = ({ user, broadcastTrigger }) => {
+export const PostEditForm = ({ broadcastTrigger }) => {
+  const { user } = useContext(GlobalContext);
   const [content, setContent] = useState('');
 
   const handleSubmit = (e) => {
