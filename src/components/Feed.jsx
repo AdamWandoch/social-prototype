@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { API_URL } from '../helpers/api_urls';
-import { WEBSOCKET_URL } from '../helpers/api_urls';
+import React, { useEffect, useState, useContext, createContext } from 'react';
+import { GlobalContext } from '../contexts/GlobalContext';
+import { API_URL, WEBSOCKET_URL } from '../helpers/api_urls';
 import { CurrentUser } from './CurrentUser';
 import { PostEditForm } from './PostEditForm';
 import { Spinner } from './Spinner';
@@ -10,19 +10,17 @@ import SockJS from 'sockjs-client';
 import axios from 'axios';
 
 var stompClient = null;
+export const FeedContext = createContext({});
 
-export const Feed = ({ userId, logout }) => {
-  const [currentUser, setCurrentUser] = useState();
+export const Feed = () => {
+  const { user } = useContext(GlobalContext);
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get(API_URL.concat('user/' + userId)).then((resp) => {
-      setCurrentUser(resp.data);
-      setIsLoading(false);
-    });
     fetchData();
     connect();
+    setIsLoading(false);
   }, []);
 
   const connect = () => {
@@ -57,25 +55,16 @@ export const Feed = ({ userId, logout }) => {
   };
 
   return (
-    <div className='feed'>
-      {currentUser && (
-        <>
-          <CurrentUser user={currentUser} signout={logout} />
-          <PostEditForm
-            user={currentUser}
-            broadcastTrigger={broadcastTrigger}
-          />
-        </>
-      )}
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <Posts
-          user={currentUser}
-          posts={posts}
-          broadcastTrigger={broadcastTrigger}
-        />
-      )}
-    </div>
+    <FeedContext.Provider value={{ broadcastTrigger }}>
+      <div className='feed'>
+        {user && (
+          <>
+            <CurrentUser />
+            <PostEditForm broadcastTrigger={broadcastTrigger} />
+          </>
+        )}
+        {isLoading ? <Spinner /> : <Posts posts={posts} />}
+      </div>
+    </FeedContext.Provider>
   );
 };

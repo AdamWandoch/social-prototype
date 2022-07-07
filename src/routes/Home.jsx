@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Feed } from '../components/Feed';
 import { SignIn } from '../components/SignIn';
+import { GlobalContext } from '../contexts/GlobalContext';
 
 export const Home = () => {
-  const [userId, setUserId] = useState(null);
+  const { user, setUser } = useContext(GlobalContext);
 
-  return (
-    <>
-      {userId ? (
-        <Feed userId={userId} logout={setUserId} />
-      ) : (
-        <SignIn setUserId={setUserId} />
-      )}
-    </>
-  );
+  return <>{user ? <Feed /> : <SignIn setUser={setUser} />}</>;
 };

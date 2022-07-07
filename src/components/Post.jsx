@@ -6,7 +6,7 @@ import { Spinner } from './Spinner';
 import { capitalize } from '../helpers/utils';
 import { LikeButton } from './LikeButton';
 
-export const Post = ({ post, currentUser, broadcastTrigger }) => {
+export const Post = ({ post }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,11 +33,7 @@ export const Post = ({ post, currentUser, broadcastTrigger }) => {
             <p className='timestamp'>{post.timestamp}</p>
             <section className='likesNcomments'>
               <p>{post.likes} Likes</p>
-              <LikeButton
-                userId={currentUser.id}
-                post={post}
-                broadcastTrigger={broadcastTrigger}
-              />
+              <LikeButton post={post} />
             </section>
           </>
         )}

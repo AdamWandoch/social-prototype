@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import avatars from '../img/avatars/avatars';
 import exitIcon from '../img/logout.svg';
 import { capitalize } from '../helpers/utils';
+import { GlobalContext } from '../contexts/GlobalContext';
 
-export const CurrentUser = ({ user, signout }) => {
+export const CurrentUser = () => {
+  const { user, setUser } = useContext(GlobalContext);
   return (
     <div className='signed-in-user'>
       <img
@@ -16,7 +18,7 @@ export const CurrentUser = ({ user, signout }) => {
         src={exitIcon}
         alt='sign out'
         className='door'
-        onClick={() => signout(null)}
+        onClick={() => setUser(null)}
       />
     </div>
   );
