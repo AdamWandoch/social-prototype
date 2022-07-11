@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const UserProfile = () => {
-  return (
-    <>UserProfile</>
-  )
-}
+  return <>UserProfile</>;
+};

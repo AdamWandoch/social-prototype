@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext, createContext } from 'react';
 import { GlobalContext } from '../contexts/GlobalContext';
-import { API_URL, WEBSOCKET_URL } from '../helpers/api_urls';
 import { CurrentUser } from './CurrentUser';
 import { PostEditForm } from './PostEditForm';
 import { Spinner } from './Spinner';
@@ -24,7 +23,8 @@ export const Feed = () => {
   }, []);
 
   const connect = () => {
-    let Sock = new SockJS(WEBSOCKET_URL);
+    // let Sock = new SockJS(WEBSOCKET_URL);
+    let Sock = new SockJS(process.env.REACT_APP_WEBSOCKET_URL);
     stompClient = over(Sock);
     stompClient.connect({}, onConnected, onError);
   };
@@ -48,7 +48,9 @@ export const Feed = () => {
   };
 
   const fetchData = async () => {
-    const resp = await axios.get(API_URL.concat('post/getall'));
+    const resp = await axios.get(
+      process.env.REACT_APP_API_URL.concat('post/getall')
+    );
     console.log(resp.data);
     setPosts(resp.data);
     setIsLoading(false);
