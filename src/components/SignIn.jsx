@@ -30,7 +30,7 @@ export const SignIn = ({ setUser }) => {
     <>
       <h2 className='text-centered margin-top-bottom'>
         Pop in your nickname, <br />
-        pick an avatar and enjoy!
+        pick an avatar and post!
       </h2>
       <div className='sign-in'>
         <form onSubmit={signIn}>
