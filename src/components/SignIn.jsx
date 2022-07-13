@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AvatarsModal } from './AvatarsModal';
 import { Avatar } from './Avatar';
+import { API_URL } from '../helpers/urls';
 import choose from '../img/avatars/choose.svg';
 import axios from 'axios';
 
@@ -17,10 +18,7 @@ export const SignIn = ({ setUser }) => {
         nickname: nickname,
         avatarId: avatarIndex,
       };
-      const resp = await axios.post(
-        process.env.REACT_APP_API_URL.concat('user/post'),
-        user
-      );
+      const resp = await axios.post(API_URL.concat('user/post'), user);
       setUser(resp.data);
     };
     postUser();

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import avatars from '../img/avatars/avatars';
-import axios from 'axios';
 import { Spinner } from './Spinner';
 import { capitalize } from '../helpers/utils';
 import { LikeButton } from './LikeButton';
+import { API_URL } from '../helpers/urls';
+import avatars from '../img/avatars/avatars';
+import axios from 'axios';
 
 export const Post = ({ post }) => {
   const [user, setUser] = useState();
@@ -11,9 +12,7 @@ export const Post = ({ post }) => {
 
   useEffect(() => {
     const getUser = async () => {
-      const resp = await axios.get(
-        process.env.REACT_APP_API_URL.concat('user/' + post.userId)
-      );
+      const resp = await axios.get(API_URL.concat('user/' + post.userId));
       setUser(resp.data);
       setIsLoading(false);
     };

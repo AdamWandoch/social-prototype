@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { capitalize, getShortDate } from '../helpers/utils';
 import { GlobalContext } from '../contexts/GlobalContext';
+import { API_URL } from '../helpers/urls';
 import avatars from '../img/avatars/avatars';
 import axios from 'axios';
 
@@ -17,10 +18,7 @@ export const PostEditForm = ({ broadcastTrigger }) => {
         content: content,
         timestamp: getShortDate(),
       };
-      const resp = await axios.post(
-        process.env.REACT_APP_API_URL.concat('post/post'),
-        post
-      );
+      const resp = await axios.post(API_URL.concat('post/post'), post);
     };
     postPost();
     setContent('');

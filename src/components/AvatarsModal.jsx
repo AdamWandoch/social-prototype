@@ -4,7 +4,6 @@ import { Avatar } from './Avatar';
 
 export const AvatarsModal = ({ showChoice, pickAvatar }) => {
   return (
-    // implement avatar selection
     <div className='avatars-modal'>
       <h1 className='text-centered margin-top-bottom'>Choose your avatar</h1>
       <div className='avatars' onClick={() => showChoice(false)}>
