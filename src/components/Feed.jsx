@@ -5,13 +5,13 @@ import { PostEditForm } from './PostEditForm';
 import { Spinner } from './Spinner';
 import { Posts } from './Posts';
 import { over } from 'stompjs';
+import { FeedContext } from '../contexts/FeedContext';
 import SockJS from 'sockjs-client';
 import axios from 'axios';
 
 import { API_URL, WEBSOCKET_URL } from '../helpers/urls';
 
 var stompClient = null;
-export const FeedContext = createContext({});
 
 export const Feed = () => {
   const { user } = useContext(GlobalContext);

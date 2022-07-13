@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FeedContext } from './Feed';
+import { FeedContext } from '../contexts/FeedContext';
 import { GlobalContext } from '../contexts/GlobalContext';
 import { API_URL } from '../helpers/urls';
 import like from '../img/like.svg';
