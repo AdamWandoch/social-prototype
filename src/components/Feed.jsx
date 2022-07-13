@@ -6,10 +6,9 @@ import { Spinner } from './Spinner';
 import { Posts } from './Posts';
 import { over } from 'stompjs';
 import { FeedContext } from '../contexts/FeedContext';
+import { API_URL, WEBSOCKET_URL } from '../helpers/urls';
 import SockJS from 'sockjs-client';
 import axios from 'axios';
-
-import { API_URL, WEBSOCKET_URL } from '../helpers/urls';
 
 var stompClient = null;
 
@@ -23,6 +22,13 @@ export const Feed = () => {
     connect();
     setIsLoading(false);
   }, []);
+
+  const fetchData = async () => {
+    const resp = await axios.get(API_URL.concat('post/getall'));
+    console.log(resp.data);
+    setPosts(resp.data);
+    setIsLoading(false);
+  };
 
   const connect = () => {
     let Sock = new SockJS(WEBSOCKET_URL);
@@ -38,21 +44,14 @@ export const Feed = () => {
     console.log(err);
   };
 
-  const broadcastTrigger = () => {
-    if (stompClient) {
-      stompClient.send('/feed-trigger', {}, '[ feed reload event triggered ]');
-    }
-  };
-
   const onMessageReceived = (payload) => {
     payload && setPosts(JSON.parse(payload.body));
   };
 
-  const fetchData = async () => {
-    const resp = await axios.get(API_URL.concat('post/getall'));
-    console.log(resp.data);
-    setPosts(resp.data);
-    setIsLoading(false);
+  const broadcastTrigger = () => {
+    if (stompClient) {
+      stompClient.send('/feed-trigger', {}, '[ feed reload event triggered ]');
+    }
   };
 
   return (
