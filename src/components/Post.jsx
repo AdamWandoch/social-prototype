@@ -9,14 +9,17 @@ import axios from 'axios';
 export const Post = ({ post }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
-    const getUser = async () => {
-      const resp = await axios.get(API_URL.concat('user/' + post.userId));
-      setUser(resp.data);
+    const initializeState = async () => {
+      const respUser = await axios.get(API_URL.concat('user/' + post.userId));
+      setUser(respUser.data);
+      const respLikes = await axios.get(API_URL.concat('like/get/' + post.id));
+      setLikes(respLikes.data);
       setIsLoading(false);
     };
-    getUser();
+    initializeState();
   }, []);
 
   return (
@@ -32,7 +35,7 @@ export const Post = ({ post }) => {
             <img src={avatars[user.avatarId].icon} className='avatar' />
             <p className='timestamp'>{post.timestamp}</p>
             <section className='likesNcomments'>
-              <p>{post.likes} Likes</p>
+              <p>{likes} Likes</p>
               <LikeButton post={post} />
             </section>
           </>
