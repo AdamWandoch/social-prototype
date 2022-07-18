@@ -18,12 +18,12 @@ export const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    loadPosts();
     connect();
     setIsLoading(false);
   }, []);
 
-  const fetchData = async () => {
+  const loadPosts = async () => {
     const resp = await axios.get(API_URL.concat('post/getall'));
     console.log(resp.data);
     setPosts(resp.data);

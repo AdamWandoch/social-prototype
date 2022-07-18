@@ -13,7 +13,6 @@ export const PostEditForm = ({ broadcastTrigger }) => {
     e.preventDefault();
     const postPost = async () => {
       const post = {
-        id: 0,
         userId: user.id,
         content: content,
         timestamp: getShortDate(),
