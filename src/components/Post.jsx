@@ -6,17 +6,14 @@ import { API_URL } from '../helpers/urls';
 import avatars from '../img/avatars/avatars';
 import axios from 'axios';
 
-export const Post = ({ post }) => {
+export const Post = ({ post, likes }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     const initializeState = async () => {
       const respUser = await axios.get(API_URL.concat('user/' + post.userId));
       setUser(respUser.data);
-      const respLikes = await axios.get(API_URL.concat('like/get/' + post.id));
-      setLikes(respLikes.data);
       setIsLoading(false);
     };
     initializeState();
