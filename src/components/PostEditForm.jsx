@@ -42,9 +42,9 @@ export const PostEditForm = ({ broadcastTrigger }) => {
             id='content'
             className='content-input'
             required
-            rows={5}
+            rows={3}
             value={content}
-            placeholder='Need free help bulding UI? Leave details here!'
+            placeholder='Need help bulding ReactJS UI? Leave details here!'
             onChange={(e) => {
               setContent(e.target.value);
             }}
