@@ -39,6 +39,7 @@ export const CommentEditForm = () => {
           id='comment'
           name='comment'
           required
+          maxLength={100}
           placeholder='your comment here'
           value={comment}
           onChange={(e) => setComment(e.target.value)}
