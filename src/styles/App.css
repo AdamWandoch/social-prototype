@@ -29,6 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 100ms ease-in-out;
 }
 
 html,
@@ -410,16 +411,52 @@ h2 {
 .post-wrapper .like-btn:hover,
 .post-wrapper .like-btn:focus {
   transform: translateY(-3px);
-  border-radius: 3px;
   cursor: pointer;
 }
 .post-wrapper .liked, .post-wrapper .like-btn:hover,
 .post-wrapper .like-btn:focus {
   filter: drop-shadow(0 0 10px var(--clr-main));
   transform: scale(1.3);
-  border: solid 2px var(--clr-glow-2);
+  border: solid 1px var(--clr-glow-2);
   border-radius: 5rem;
   padding: 1px;
+}
+.post-wrapper .comments-window {
+  grid-column: span 3;
+  background-color: var(--clr-bg-alpha-1);
+  border-radius: 1rem;
+  border: solid var(--line-thickness);
+  padding: 0.5rem;
+  width: 100%;
+}
+.post-wrapper .comments-edit-form input {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.post-wrapper .comment {
+  margin: 0.2rem 0;
+  border: solid 1px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--clr-pr-green-100);
+  font-size: x-small;
+}
+@media (min-width: 600px) {
+  .post-wrapper .comment {
+    font-size: inherit;
+  }
+}
+.post-wrapper .comment span {
+  float: right;
+}
+.post-wrapper .comment img {
+  width: 2rem;
+  padding: 0;
+  border: solid 1px;
 }
 .post-wrapper .up {
   transform: translateY(-65px) translateX(200%);

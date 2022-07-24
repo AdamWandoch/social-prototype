@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { FeedContext } from '../contexts/FeedContext';
 import { GlobalContext } from '../contexts/GlobalContext';
 import { API_URL } from '../helpers/urls';
