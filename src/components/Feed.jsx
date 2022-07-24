@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, createContext } from 'react';
+import { useEffect, useState, useContext, createContext } from 'react';
 import { GlobalContext } from '../contexts/GlobalContext';
 import { CurrentUser } from './CurrentUser';
 import { PostEditForm } from './PostEditForm';

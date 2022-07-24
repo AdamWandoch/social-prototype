@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { capitalize } from '../helpers/utils';
 import { GlobalContext } from '../contexts/GlobalContext';
 import avatars from '../img/avatars/avatars';

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { capitalize, getShortDate } from '../helpers/utils';
 import { GlobalContext } from '../contexts/GlobalContext';
 import { API_URL } from '../helpers/urls';
@@ -42,9 +42,9 @@ export const PostEditForm = ({ broadcastTrigger }) => {
             id='content'
             className='content-input'
             required
-            rows={5}
+            rows={3}
             value={content}
-            placeholder='Need free help bulding UI? Leave details here!'
+            placeholder='Need help bulding ReactJS UI? Leave details here!'
             onChange={(e) => {
               setContent(e.target.value);
             }}
@@ -54,7 +54,7 @@ export const PostEditForm = ({ broadcastTrigger }) => {
             alt={avatars[user.avatarId].name}
             className='top-icon left'
           />
-          <button className='btn'>submit</button>
+          <button className='btn'>post</button>
         </form>
       </div>
     </section>

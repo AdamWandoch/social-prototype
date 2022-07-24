@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AvatarsModal } from './AvatarsModal';
 import { Avatar } from './Avatar';
 import { API_URL } from '../helpers/urls';
