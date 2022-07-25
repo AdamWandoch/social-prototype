@@ -9,20 +9,20 @@ import { PostContext } from '../contexts/PostContext';
 import avatars from '../img/avatars/avatars';
 import axios from 'axios';
 
-export const Post = ({ post, likes }) => {
+export const Post = ({ post, likes, comments }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [areCommentsOpen, setAreCommentsOpen] = useState(false);
-  const [commentsCount, setCommentsCount] = useState(0);
+  // const [commentsCount, setCommentsCount] = useState(comments);
 
   useEffect(() => {
     const initializeState = async () => {
       const respUser = await axios.get(API_URL.concat(`user/${post.userId}`));
-      const respComments = await axios.get(
-        API_URL.concat(`comment/${post.id}`)
-      );
+      // const respComments = await axios.get(
+      //   API_URL.concat(`comment/${post.id}`)
+      // );
       setUser(respUser.data);
-      setCommentsCount(respComments.data.length);
+      // setCommentsCount(respComments.data.length);
       setIsLoading(false);
     };
     initializeState();
@@ -43,7 +43,7 @@ export const Post = ({ post, likes }) => {
             <div className='post-content'>{post.content}</div>
             <section className='likesNcomments'>
               <p>
-                {commentsCount} {commentsCount === 1 ? 'comment' : 'comments'}
+                {comments} {comments === 1 ? 'comment' : 'comments'}
               </p>
               <CommentButton setAreCommentsOpen={setAreCommentsOpen} />
               <p>
@@ -52,7 +52,7 @@ export const Post = ({ post, likes }) => {
               <LikeButton post={post} />
             </section>
             {areCommentsOpen && (
-              <PostContext.Provider value={{ post, setCommentsCount }}>
+              <PostContext.Provider value={{ post }}>
                 <Comments />
               </PostContext.Provider>
             )}
