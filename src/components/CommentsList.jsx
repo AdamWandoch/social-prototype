@@ -8,16 +8,16 @@ import axios from 'axios';
 
 export const CommentsList = () => {
   const [comments, setComments] = useState();
-  const { post, setCommentsCount } = useContext(PostContext);
+  const { post } = useContext(PostContext);
 
   useEffect(() => {
     const getComments = async () => {
       const resp = await axios.get(API_URL.concat(`comment/${post.id}`));
       setComments(resp.data);
-      setCommentsCount(resp.data.length);
+      // setCommentsCount(resp.data.length);
     };
     getComments();
-  }, []);
+  }, [post.comments]);
 
   return (
     <>
