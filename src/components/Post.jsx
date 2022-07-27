@@ -29,7 +29,7 @@ export const Post = ({ post, likes, comments }) => {
   }, []);
 
   return (
-    <article className='post-wrapper'>
+    <article className='post-wrapper shadow'>
       {isLoading && <Spinner />}
       <div className='post'>
         {user && (
@@ -40,7 +40,7 @@ export const Post = ({ post, likes, comments }) => {
               {capitalize(avatars[user.avatarId].name)}
             </div>
             <p className='timestamp'>{post.timestamp}</p>
-            <div className='post-content'>{post.content}</div>
+            <div className='post-content shadow'>{post.content}</div>
             <section className='likesNcomments'>
               <p>
                 {comments} {comments === 1 ? 'comment' : 'comments'}

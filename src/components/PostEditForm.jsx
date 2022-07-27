@@ -25,7 +25,7 @@ export const PostEditForm = ({ broadcastTrigger }) => {
   };
 
   return (
-    <section className='post-edit-form'>
+    <section className='post-edit-form shadow'>
       <img
         src={avatars[user.avatarId].icon}
         alt={avatars[user.avatarId].name}

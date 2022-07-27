@@ -7,7 +7,7 @@ import exitIcon from '../img/logout.svg';
 export const CurrentUser = () => {
   const { user, setUser } = useContext(GlobalContext);
   return (
-    <div className='signed-in-user'>
+    <div className='signed-in-user shadow'>
       <img
         src={avatars[user.avatarId].icon}
         alt={avatars[user.avatarId].name}

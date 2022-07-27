@@ -25,7 +25,7 @@ export const SignIn = ({ setUser }) => {
   };
 
   return (
-    <>
+    <main className='shadow grid'>
       <h2 className='text-centered margin-top-bottom'>
         Pop in your nickname, <br />
         pick an avatar and post!
@@ -65,6 +65,6 @@ export const SignIn = ({ setUser }) => {
           pickAvatar={setAvatarIndex}
         />
       )}
-    </>
+    </main>
   );
 };

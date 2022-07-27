@@ -23,6 +23,7 @@
   --clr-glow: hsl(167, 100%, 50%);
   --clr-glow-2: #206052;
   --clr-bg-avatars-modal: hsla(177, 60%, 12%, 0.98);
+  --clr-shadow: hsla(0, 0%, 0%, 0.363);
 
   // SIZES
   --line-thickness: 0.2rem;
@@ -71,6 +72,10 @@ body {
   }
 }
 
+#root {
+  position: relative;
+}
+
 h2 {
   font-size: 0.8rem;
   @media (min-width: 450px) {
@@ -90,10 +95,22 @@ h2 {
   }
 }
 
+.shadow {
+  filter: drop-shadow(0 0 5px var(--clr-shadow));
+}
+
+.grid {
+  display: grid;
+}
+
 // ELEMENTS AND COMPONENTS
 .container {
   width: min(95%, var(--max-width));
   margin: auto;
+  display: grid;
+}
+
+header {
   display: grid;
 }
 
