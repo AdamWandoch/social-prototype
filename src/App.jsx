@@ -14,7 +14,6 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <div className='container'>
       <GlobalContext.Provider value={{ user, setUser }}>
         <Header />
         <Routes>
@@ -26,7 +25,6 @@ function App() {
         </Routes>
         <Footer />
       </GlobalContext.Provider>
-    </div>
   );
 }
 

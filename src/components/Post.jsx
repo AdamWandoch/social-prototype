@@ -13,16 +13,11 @@ export const Post = ({ post, likes, comments }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [areCommentsOpen, setAreCommentsOpen] = useState(false);
-  // const [commentsCount, setCommentsCount] = useState(comments);
 
   useEffect(() => {
     const initializeState = async () => {
       const respUser = await axios.get(API_URL.concat(`user/${post.userId}`));
-      // const respComments = await axios.get(
-      //   API_URL.concat(`comment/${post.id}`)
-      // );
       setUser(respUser.data);
-      // setCommentsCount(respComments.data.length);
       setIsLoading(false);
     };
     initializeState();
