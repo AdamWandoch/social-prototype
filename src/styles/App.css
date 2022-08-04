@@ -83,7 +83,7 @@ h2 {
   }
 }
 
-.shadow {
+.shadow, .sign-in {
   filter: drop-shadow(0 0 5px var(--clr-shadow));
 }
 
@@ -94,6 +94,7 @@ h2 {
 #root {
   width: min(95%, var(--max-width));
   margin: auto;
+  display: grid;
 }
 
 header {
@@ -246,6 +247,7 @@ header {
 .avatars-modal {
   background-color: var(--clr-bg-avatars-modal);
   position: absolute;
+  top: 0;
   z-index: 10;
   justify-self: center;
   padding: 0 3rem;
