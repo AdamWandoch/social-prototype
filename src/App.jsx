@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { GlobalContext } from './contexts/GlobalContext';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './routes/Home';
 import { UserProfile } from './routes/UserProfile';

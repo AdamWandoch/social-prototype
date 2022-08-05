@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
-import { capitalize, getShortDate } from '../helpers/utils';
-import { GlobalContext } from '../contexts/GlobalContext';
-import { API_URL } from '../helpers/urls';
-import avatars from '../img/avatars/avatars';
+import { capitalize, getShortDate } from '../../helpers/utils';
+import { GlobalContext } from '../../contexts/GlobalContext';
+import { API_URL } from '../../helpers/urls';
+import avatars from '../../img/avatars/avatars';
 import axios from 'axios';
 
 export const PostEditForm = ({ broadcastTrigger }) => {

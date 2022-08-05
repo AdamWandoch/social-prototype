@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext, createContext } from 'react';
-import { GlobalContext } from '../contexts/GlobalContext';
-import { CurrentUser } from './CurrentUser';
-import { PostEditForm } from './PostEditForm';
-import { Spinner } from './Spinner';
-import { Posts } from './Posts';
+import { GlobalContext } from '../../contexts/GlobalContext';
+import { CurrentUser } from '../CurrentUser/CurrentUser';
+import { PostEditForm } from '../PostEditForm/PostEditForm';
+import { Spinner } from '../Spinner/Spinner';
+import { Posts } from '../Posts/Posts';
 import { over } from 'stompjs';
-import { FeedContext } from '../contexts/FeedContext';
-import { API_URL, WEBSOCKET_URL } from '../helpers/urls';
+import { FeedContext } from '../../contexts/FeedContext';
+import { API_URL, WEBSOCKET_URL } from '../../helpers/urls';
 import SockJS from 'sockjs-client';
 import axios from 'axios';
 

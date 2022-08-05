@@ -1,6 +1,6 @@
 import React from 'react';
-import avatars from '../img/avatars/avatars';
-import { Avatar } from './Avatar';
+import avatars from '../../img/avatars/avatars';
+import { Avatar } from '../Avatar/Avatar';
 
 export const AvatarsModal = ({ showChoice, pickAvatar }) => {
   return (

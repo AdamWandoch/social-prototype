@@ -1,5 +1,5 @@
 import React from 'react';
-import avatars from '../img/avatars/avatars';
+import avatars from '../../img/avatars/avatars';
 
 export const Avatar = ({ index, pickAvatar }) => {
   const handleClick = () => {

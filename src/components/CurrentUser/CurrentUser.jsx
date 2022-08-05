@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { capitalize } from '../helpers/utils';
-import { GlobalContext } from '../contexts/GlobalContext';
-import avatars from '../img/avatars/avatars';
-import exitIcon from '../img/logout.svg';
+import { capitalize } from '../../helpers/utils';
+import { GlobalContext } from '../../contexts/GlobalContext';
+import avatars from '../../img/avatars/avatars';
+import exitIcon from '../../img/logout.svg';
 
 export const CurrentUser = () => {
   const { user, setUser } = useContext(GlobalContext);
