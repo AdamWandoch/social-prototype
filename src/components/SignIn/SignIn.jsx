@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AvatarsModal } from '../AvatarsModal/AvatarsModal';
 import { Avatar } from '../Avatar/Avatar';
 import { API_URL } from '../../helpers/urls';
-import choose from '../img/avatars/choose.svg';
+import choose from '../../img/avatars/choose.svg';
 import axios from 'axios';
 
 export const SignIn = ({ setUser }) => {

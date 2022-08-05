@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from 'react';
-import { FeedContext } from '../contexts/FeedContext';
-import { GlobalContext } from '../contexts/GlobalContext';
-import { API_URL } from '../helpers/urls';
-import like from '../img/like.svg';
-import liked from '../img/liked.svg';
+import { FeedContext } from '../../contexts/FeedContext';
+import { GlobalContext } from '../../contexts/GlobalContext';
+import { API_URL } from '../../helpers/urls';
+import like from '../../img/like.svg';
+import liked from '../../img/liked.svg';
 import axios from 'axios';
 
 export const LikeButton = ({ post }) => {
