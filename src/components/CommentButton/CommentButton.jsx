@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import comment from '../img/comment.svg';
+import comment from '../../img/comment.svg';
 
 export const CommentButton = ({ setAreCommentsOpen }) => {
   const [isActive, setIsActive] = useState(false);

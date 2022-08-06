@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Spinner } from './Spinner';
-import { LikeButton } from './LikeButton';
-import { CommentButton } from './CommentButton';
-import { Comments } from './Comments';
-import { API_URL } from '../helpers/urls';
-import { capitalize } from '../helpers/utils';
-import { PostContext } from '../contexts/PostContext';
-import avatars from '../img/avatars/avatars';
+import { Spinner } from '../Spinner/Spinner';
+import { LikeButton } from '../LikeButton/LikeButton';
+import { CommentButton } from '../CommentButton/CommentButton';
+import { Comments } from '../Comments/Comments';
+import { API_URL } from '../../helpers/urls';
+import { capitalize } from '../../helpers/utils';
+import { PostContext } from '../../contexts/PostContext';
+import avatars from '../../img/avatars/avatars';
 import axios from 'axios';
 
 export const Post = ({ post, likes, comments }) => {

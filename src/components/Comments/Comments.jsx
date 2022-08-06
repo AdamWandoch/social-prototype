@@ -1,5 +1,5 @@
-import { CommentEditForm } from './CommentEditForm';
-import { CommentsList } from './CommentsList';
+import { CommentEditForm } from '../CommentEditForm/CommentEditForm';
+import { CommentsList } from '../CommentsList/CommentsList';
 
 export const Comments = () => {
   return (

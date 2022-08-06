@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { API_URL } from '../helpers/urls';
-import avatars from '../img/avatars/avatars';
+import { API_URL } from '../../helpers/urls';
+import avatars from '../../img/avatars/avatars';
 
 export const Comment = ({ userId, content, timestamp }) => {
   const [user, setUser] = useState({ avatarId: 0 });

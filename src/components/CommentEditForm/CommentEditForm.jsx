@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { useContext } from 'react';
 import { useState } from 'react';
-import { GlobalContext } from '../contexts/GlobalContext';
-import { FeedContext } from '../contexts/FeedContext';
-import { PostContext } from '../contexts/PostContext';
-import { API_URL } from '../helpers/urls';
-import { getShortDate } from '../helpers/utils';
+import { GlobalContext } from '../../contexts/GlobalContext';
+import { FeedContext } from '../../contexts/FeedContext';
+import { PostContext } from '../../contexts/PostContext';
+import { API_URL } from '../../helpers/urls';
+import { getShortDate } from '../../helpers/utils';
 
 const postComment = async (comment) => {
   const resp = await axios.post(API_URL.concat('comment/save'), comment);
