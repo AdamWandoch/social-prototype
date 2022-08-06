@@ -20,7 +20,7 @@ import surgeon from './surgeon.svg';
 import telemarketer from './telemarketer.svg';
 import woman from './woman.svg';
 
-export default [
+const avatars = [
   { name: 'asian', icon: asian },
   { name: 'diver', icon: diver },
   { name: 'doctor', icon: doctor },
@@ -43,3 +43,5 @@ export default [
   { name: 'telemarketer', icon: telemarketer },
   { name: 'woman', icon: woman },
 ];
+
+export default avatars;
