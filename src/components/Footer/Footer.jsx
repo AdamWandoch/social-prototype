@@ -1,20 +1,18 @@
-import React from 'react';
+import { StyledFooter } from './Footer.styled.jsx';
 
-export const Footer = () => {
+export const Footer = ({ colour }) => {
   return (
-    <>
-      <footer className='text-centered footer'>
-        <p>
-          Adam Wandoch 2022 {'-> '}
-          <a
-            href='https://github.com/AdamWandoch/social-prototype'
-            target='_blank'
-            rel='noreferrer'
-          >
-            GitHub
-          </a>
-        </p>
-      </footer>
-    </>
+    <StyledFooter colour={colour}>
+      <p>
+        Adam Wandoch 2022 {'-> '}
+        <a
+          href='https://github.com/AdamWandoch/social-prototype'
+          target='_blank'
+          rel='noreferrer'
+        >
+          GitHub
+        </a>
+      </p>
+    </StyledFooter>
   );
 };
