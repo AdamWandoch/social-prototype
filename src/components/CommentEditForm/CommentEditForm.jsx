@@ -7,8 +7,8 @@ import { PostContext } from '../../contexts/PostContext';
 import { API_URL } from '../../helpers/urls';
 import { getShortDate } from '../../helpers/utils';
 
-const postComment = async (comment) => {
-  const resp = await axios.post(API_URL.concat('comment/save'), comment);
+const postComment = (comment) => {
+  axios.post(API_URL.concat('comment/save'), comment);
 };
 
 export const CommentEditForm = () => {

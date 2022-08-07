@@ -12,13 +12,13 @@ export const Comment = ({ userId, content, timestamp }) => {
       setUser(resp.data);
     };
     getUser(userId);
-  }, []);
+  }, [userId]);
 
   return (
     <div className='comment'>
       {user && (
         <>
-          <img src={avatars[user.avatarId].icon} className='avatar' />
+          <img src={avatars[user.avatarId].icon} className='avatar' alt='avatar' />
           <span>
             {user.nickname} @ {timestamp}
           </span>

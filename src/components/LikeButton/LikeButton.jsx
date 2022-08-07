@@ -18,7 +18,7 @@ export const LikeButton = ({ post }) => {
       setIsGlowing(resp.data);
     };
     loadState();
-  }, []);
+  }, [post.id, user.id]);
 
   const sendAlike = async () => {
     const like = { id: 0, postId: post.id, userId: user.id };

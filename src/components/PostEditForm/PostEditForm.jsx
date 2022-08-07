@@ -11,13 +11,13 @@ export const PostEditForm = ({ broadcastTrigger }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const postPost = async () => {
+    const postPost = () => {
       const post = {
         userId: user.id,
         content: content,
         timestamp: getShortDate(),
       };
-      const resp = await axios.post(API_URL.concat('post/post'), post);
+      axios.post(API_URL.concat('post/post'), post);
     };
     postPost();
     setContent('');

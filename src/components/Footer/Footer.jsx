@@ -9,6 +9,7 @@ export const Footer = () => {
           <a
             href='https://github.com/AdamWandoch/social-prototype'
             target='_blank'
+            rel='noreferrer'
           >
             GitHub
           </a>

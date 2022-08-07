@@ -21,7 +21,7 @@ export const Post = ({ post, likes, comments }) => {
       setIsLoading(false);
     };
     initializeState();
-  }, []);
+  }, [post.userId]);
 
   return (
     <article className='post-wrapper shadow'>
@@ -29,7 +29,11 @@ export const Post = ({ post, likes, comments }) => {
       <div className='post'>
         {user && (
           <>
-            <img src={avatars[user.avatarId].icon} className='avatar' />
+            <img
+              src={avatars[user.avatarId].icon}
+              className='avatar'
+              alt='avatar'
+            />
             <div className='signature'>
               {capitalize(user.nickname)} the{' '}
               {capitalize(avatars[user.avatarId].name)}

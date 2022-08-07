@@ -14,7 +14,7 @@ export const CommentsList = () => {
       setComments(resp.data);
     };
     getComments();
-  }, [post.comments]);
+  }, [post.comments, post.id]);
 
   return (
     <>
