@@ -7,11 +7,9 @@ export const Avatar = ({ index, pickAvatar }) => {
   };
 
   return (
-    <AvatarStyled onClick={handleClick} className='avatar-wrapper'>
+    <AvatarStyled onClick={handleClick}>
       <img src={avatars[index].icon} alt='avatar' />
-      <p className='avatar-name' data-testid='paragraph'>
-        {avatars[index].name.toUpperCase()}
-      </p>
+      <p data-testid='paragraph'>{avatars[index].name.toUpperCase()}</p>
     </AvatarStyled>
   );
 };
