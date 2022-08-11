@@ -2,9 +2,9 @@ import { StyledFooter } from './Footer.styled.jsx';
 
 const year = new Date().getFullYear();
 
-export const Footer = ({ colour }) => {
+export const Footer = ({ color }) => {
   return (
-    <StyledFooter colour={colour}>
+    <StyledFooter color={color}>
       <p data-testid='paragraph'>
         Adam Wandoch {year} {'-> '}
         <a

@@ -1,4 +1,4 @@
-import React from 'react';
+import { AvatarStyled } from './Avatar.styled';
 import avatars from '../../img/avatars/avatars';
 
 export const Avatar = ({ index, pickAvatar }) => {
@@ -7,11 +7,11 @@ export const Avatar = ({ index, pickAvatar }) => {
   };
 
   return (
-    <div onClick={handleClick} className='avatar-wrapper'>
-      <img src={avatars[index].icon} alt='avatar' className='avatar' />
+    <AvatarStyled onClick={handleClick} className='avatar-wrapper'>
+      <img src={avatars[index].icon} alt='avatar' />
       <p className='avatar-name' data-testid='paragraph'>
         {avatars[index].name.toUpperCase()}
       </p>
-    </div>
+    </AvatarStyled>
   );
 };
