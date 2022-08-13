@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, act, fireEvent } from '@testing-library/react';
 import { Avatar } from './Avatar';
 
 describe(Avatar, () => {
@@ -40,5 +40,21 @@ describe(Avatar, () => {
     const element = queryByAltText('avatar');
     expect(element).toBeTruthy;
     expect(element.nodeName).toBe('IMG');
+  });
+});
+
+describe(Avatar, () => {
+  it('can call pickAvatar', () => {
+    const mockCallback = jest.fn();
+    const { getByAltText } = render(
+      <Avatar index={0} pickAvatar={mockCallback} />
+    );
+    const element = getByAltText('avatar');
+
+    act(() => {
+      fireEvent.click(element);
+    });
+
+    expect(mockCallback).toHaveBeenCalled();
   });
 });
