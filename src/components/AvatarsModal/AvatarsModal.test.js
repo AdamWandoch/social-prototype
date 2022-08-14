@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import avatars from '../../img/avatars/avatars';
 import { AvatarsModal } from './AvatarsModal';
 
@@ -24,5 +25,17 @@ describe(AvatarsModal, () => {
     paragraphArr.forEach((paragraph, index) => {
       expect(paragraph.textContent).toEqual(avatars[index].name.toUpperCase());
     });
+  });
+
+  it('call shoChoice onClick', () => {
+    const mockCallback = jest.fn();
+    const { getByTestId } = render(<AvatarsModal showChoice={mockCallback} />);
+    const element = getByTestId('avatars');
+
+    act(() => {
+      fireEvent.click(element);
+    });
+
+    expect(mockCallback).toHaveBeenCalled();
   });
 });
