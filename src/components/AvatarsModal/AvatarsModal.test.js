@@ -27,7 +27,7 @@ describe(AvatarsModal, () => {
     });
   });
 
-  it('call shoChoice onClick', () => {
+  it('calls showChoice onClick', () => {
     const mockCallback = jest.fn();
     const { getByTestId } = render(<AvatarsModal showChoice={mockCallback} />);
     const element = getByTestId('avatars');
