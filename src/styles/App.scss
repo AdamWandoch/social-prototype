@@ -68,7 +68,7 @@ body {
   }
 
   @media (min-width: 450px) {
-    margin: 1rem 0;
+    margin: 1.8rem 0;
   }
 }
 
@@ -536,9 +536,9 @@ h2 {
 }
 
 // DESIGN-DEBUG MODE
-// * {
-//   // background-color: hsla(0, 100%, 50%, 0.13);
-//   outline-color: red;
-//   outline-style: dashed;
-//   outline-width: 1px;
-// }
+* {
+  // background-color: hsla(0, 100%, 50%, 0.13);
+  outline-color: red;
+  outline-style: dashed;
+  outline-width: 1px;
+}

@@ -57,7 +57,7 @@ body a:visited {
 }
 @media (min-width: 450px) {
   body {
-    margin: 1rem 0;
+    margin: 1.8rem 0;
   }
 }
 
@@ -504,4 +504,10 @@ h2 {
   min-height: 40vh;
   justify-items: center;
   align-content: center;
+}
+
+* {
+  outline-color: red;
+  outline-style: dashed;
+  outline-width: 1px;
 }/*# sourceMappingURL=App.css.map */
