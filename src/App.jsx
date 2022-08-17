@@ -9,7 +9,6 @@ import { About } from './routes/About';
 import { Contact } from './routes/Contact';
 import { Error } from './routes/Error';
 import { Navbar } from './components/Navbar/Navbar';
-// import { config } from './components/Navbar/config';
 import './styles/App.css';
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
         <Route path='/user-profile' element={<UserProfile />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/contact' element={<Contact />}></Route>

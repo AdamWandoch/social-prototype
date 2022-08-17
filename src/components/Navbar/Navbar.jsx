@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyledNavbar } from './Navbar.styled';
+import { Link } from 'react-router-dom';
 
 const config = {
-  title: 'SocialAppPrototype',
-  bg: 'rgba(255, 255, 255, 0.2)',
-  color: 'yellow',
-  titleFontSize: '1.3rem',
+  title: 'SocialApp.',
+  bg: 'rgba(255, 255, 255, 0.5)',
+  color: 'white',
+  titleFontSize: '1.5rem',
   links: ['Home', 'About', 'Contact'],
 };
 
@@ -13,8 +14,18 @@ export const Navbar = () => {
   return (
     <StyledNavbar {...config}>
       <section>
-        <span>{config.title || '!!! default title !!!'}</span>
-        <ul>{config.links && config.links.map((link) => <li>{link}</li>)}</ul>
+        <Link to={'./'}>
+          <span>{config.title || '!!! default title !!!'}</span>
+        </Link>
+        
+        <ul>
+          {config.links &&
+            config.links.map((link, index) => (
+              <li key={index}>
+                <Link to={`./${link.toLowerCase()}`}>{link}</Link>
+              </li>
+            ))}
+        </ul>
       </section>
     </StyledNavbar>
   );

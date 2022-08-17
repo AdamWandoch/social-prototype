@@ -46,7 +46,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   align-items: center;
-  margin: 0.2rem 0 1rem 0;
+  margin: 3.4rem 0 1rem 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(to right, var(--clr-pr-green-400), var(--clr-pr-blue));
@@ -54,11 +54,6 @@ body {
 body a,
 body a:visited {
   color: inherit;
-}
-@media (min-width: 450px) {
-  body {
-    margin: 1.8rem 0;
-  }
 }
 
 h2 {
@@ -504,10 +499,4 @@ h2 {
   min-height: 40vh;
   justify-items: center;
   align-content: center;
-}
-
-* {
-  outline-color: red;
-  outline-style: dashed;
-  outline-width: 1px;
 }/*# sourceMappingURL=App.css.map */
