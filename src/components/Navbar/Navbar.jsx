@@ -1,16 +1,20 @@
 import React from 'react';
 import { StyledNavbar } from './Navbar.styled';
 
-export const Navbar = ({ title, bg, color, links, titleFontSize }) => {
+const config = {
+  title: 'SocialAppPrototype',
+  bg: 'rgba(255, 255, 255, 0.2)',
+  color: 'yellow',
+  titleFontSize: '1.3rem',
+  links: ['Home', 'About', 'Contact'],
+};
+
+export const Navbar = () => {
   return (
-    <StyledNavbar bg={bg} color={color} titleFontSize={titleFontSize}>
+    <StyledNavbar {...config}>
       <section>
-        <span>{title || '!!! default title !!!'}</span>
-        <ul>
-          {links.map((link) => (
-            <li>{link}</li>
-          ))}
-        </ul>
+        <span>{config.title || '!!! default title !!!'}</span>
+        <ul>{config.links && config.links.map((link) => <li>{link}</li>)}</ul>
       </section>
     </StyledNavbar>
   );

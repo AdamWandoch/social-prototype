@@ -9,7 +9,7 @@ import { About } from './routes/About';
 import { Contact } from './routes/Contact';
 import { Error } from './routes/Error';
 import { Navbar } from './components/Navbar/Navbar';
-import { config } from './components/Navbar/config';
+// import { config } from './components/Navbar/config';
 import './styles/App.css';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <GlobalContext.Provider value={{ user, setUser }}>
-      <Navbar {...config} />
+      <Navbar />
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
