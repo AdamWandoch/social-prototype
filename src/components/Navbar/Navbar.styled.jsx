@@ -9,7 +9,7 @@ export const StyledNavbar = styled.nav`
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 500;
+  z-index: 5;
 
   a {
     text-decoration: none;
@@ -24,27 +24,63 @@ export const StyledNavbar = styled.nav`
   }
 
   span {
+    display: block;
+    width: min-content;
     border: solid 3px;
     border-radius: 10rem;
     padding: 0 1rem;
+    margin-left: 0.5rem;
     text-align: left;
+    align-self: center;
     background-color: ${(props) => (props.bg ? props.bg : 'none')};
     font-size: ${(props) =>
       props.titleFontSize ? props.titleFontSize : '1rem'};
   }
 
-  ul {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+  .menu {
+    display: flex;
+    margin-left: auto;
   }
 
   li {
-    display: inline;
     padding: 0 1rem;
     border: solid 3px;
     border-radius: 10rem;
     margin: 0 0.5rem;
+    display: block;
+    width: 100%;
+    align-self: center;
+  }
+
+  .menu-button {
+    padding: 0 0.5rem;
+    cursor: pointer;
+    display: none;
+    width: min-content;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    align-self: center;
+    background-color: unset;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .menu.expanded {
+      display: block;
+    }
+
+    li {
+      width: 200%;
+      text-align: center;
+      margin: 2rem auto;
+    }
   }
 `;
