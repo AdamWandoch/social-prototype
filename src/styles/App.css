@@ -372,6 +372,11 @@ h2 {
   }
 }
 
+.post-wrapper .post-skeleton {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  margin-left: 2rem;
+}
 .post-wrapper .post {
   background-color: var(--clr-bg-alpha-1);
   padding: 1rem;

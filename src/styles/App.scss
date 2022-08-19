@@ -380,6 +380,12 @@ h2 {
 .post-wrapper {
   @extend .post-edit-form;
 
+  .post-skeleton {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    margin-left: 2rem;
+  }
+  
   .post {
     background-color: var(--clr-bg-alpha-1);
     padding: 1rem;

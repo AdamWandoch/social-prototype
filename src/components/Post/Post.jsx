@@ -6,6 +6,7 @@ import { Comments } from '../Comments/Comments';
 import { API_URL } from '../../helpers/urls';
 import { capitalize } from '../../helpers/utils';
 import { PostContext } from '../../contexts/PostContext';
+import { PostSkeleton } from './PostSkeleton';
 import avatars from '../../img/avatars/avatars';
 import axios from 'axios';
 
@@ -25,7 +26,8 @@ export const Post = ({ post, likes, comments }) => {
 
   return (
     <article className='post-wrapper shadow'>
-      {isLoading && <Spinner />}
+      {/* {isLoading && <Spinner />} */}
+      <PostSkeleton />
       <div className='post'>
         {user && (
           <>
