@@ -10,6 +10,7 @@ export const StyledNavbar = styled.nav`
   top: 0;
   width: 100%;
   z-index: 5;
+  
 
   a {
     text-decoration: none;
@@ -20,7 +21,9 @@ export const StyledNavbar = styled.nav`
     grid-template-columns: 1fr 1fr;
     position: relative;
     width: min(100%, 600px);
+    height: 3rem;
     margin: auto;
+    align-items: center;
   }
 
   span {
@@ -31,7 +34,6 @@ export const StyledNavbar = styled.nav`
     padding: 0 1rem;
     margin-left: 0.5rem;
     text-align: left;
-    align-self: center;
     background-color: ${(props) => (props.bg ? props.bg : 'none')};
     font-size: ${(props) =>
       props.titleFontSize ? props.titleFontSize : '1rem'};
@@ -49,7 +51,6 @@ export const StyledNavbar = styled.nav`
     margin: 0 0.5rem;
     display: block;
     width: 100%;
-    align-self: center;
   }
 
   .menu-button {
@@ -65,6 +66,10 @@ export const StyledNavbar = styled.nav`
   }
 
   @media screen and (max-width: 768px) {
+    section {
+      height: unset;
+    }
+
     .menu-button {
       display: block;
     }
