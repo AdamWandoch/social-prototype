@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react';
 import { GlobalContext } from '../../contexts/GlobalContext';
 import { CurrentUser } from '../CurrentUser/CurrentUser';
 import { PostEditForm } from '../PostEditForm/PostEditForm';
-import { Spinner } from '../Spinner/Spinner';
 import { Posts } from '../Posts/Posts';
 import { over } from 'stompjs';
 import { FeedContext } from '../../contexts/FeedContext';
@@ -23,15 +22,15 @@ export const Feed = () => {
     setPosts(resp.data);
     setIsLoading(false);
   };
-  
+
   const onConnected = useCallback(() => {
     stompClient.subscribe('/feed-clients', onMessageReceived);
-  },[]);
-  
+  }, []);
+
   const onError = useCallback((err) => {
     console.log(err);
-  },[]);
-  
+  }, []);
+
   const onMessageReceived = (payload) => {
     payload && setPosts(JSON.parse(payload.body));
   };
@@ -40,14 +39,14 @@ export const Feed = () => {
     let Sock = new SockJS(WEBSOCKET_URL);
     stompClient = over(Sock);
     stompClient.connect({}, onConnected, onError);
-  },[onConnected, onError]);
-  
+  }, [onConnected, onError]);
+
   const broadcastTrigger = () => {
     if (stompClient) {
       stompClient.send('/feed-trigger', {}, '[ feed reload event triggered ]');
     }
   };
-  
+
   useEffect(() => {
     loadPosts();
     connect();
@@ -63,7 +62,7 @@ export const Feed = () => {
             <PostEditForm broadcastTrigger={broadcastTrigger} />
           </>
         )}
-        {isLoading ? <Spinner /> : <Posts posts={posts} />}
+        {!isLoading && <Posts posts={posts} />}
       </div>
     </FeedContext.Provider>
   );
