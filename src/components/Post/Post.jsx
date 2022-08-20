@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Spinner } from '../Spinner/Spinner';
 import { LikeButton } from '../LikeButton/LikeButton';
 import { CommentButton } from '../CommentButton/CommentButton';
 import { Comments } from '../Comments/Comments';
@@ -26,40 +25,42 @@ export const Post = ({ post, likes, comments }) => {
 
   return (
     <article className='post-wrapper shadow'>
-      {/* {isLoading && <Spinner />} */}
-      <PostSkeleton />
-      <div className='post'>
-        {user && (
-          <>
-            <img
-              src={avatars[user.avatarId].icon}
-              className='avatar'
-              alt='avatar'
-            />
-            <div className='signature'>
-              {capitalize(user.nickname)} the{' '}
-              {capitalize(avatars[user.avatarId].name)}
-            </div>
-            <p className='timestamp'>{post.timestamp}</p>
-            <div className='post-content shadow'>{post.content}</div>
-            <section className='likesNcomments'>
-              <p>
-                {comments} {comments === 1 ? 'comment' : 'comments'}
-              </p>
-              <CommentButton setAreCommentsOpen={setAreCommentsOpen} />
-              <p>
-                {likes} {likes === 1 ? 'like' : 'likes'}
-              </p>
-              <LikeButton post={post} />
-            </section>
-            {areCommentsOpen && (
-              <PostContext.Provider value={{ post }}>
-                <Comments />
-              </PostContext.Provider>
-            )}
-          </>
-        )}
-      </div>
+      {isLoading ? (
+        <PostSkeleton />
+      ) : (
+        <div className='post'>
+          {user && (
+            <>
+              <img
+                src={avatars[user.avatarId].icon}
+                className='avatar'
+                alt='avatar'
+              />
+              <div className='signature'>
+                {capitalize(user.nickname)} the{' '}
+                {capitalize(avatars[user.avatarId].name)}
+              </div>
+              <p className='timestamp'>{post.timestamp}</p>
+              <div className='post-content shadow'>{post.content}</div>
+              <section className='likesNcomments'>
+                <p>
+                  {comments} {comments === 1 ? 'comment' : 'comments'}
+                </p>
+                <CommentButton setAreCommentsOpen={setAreCommentsOpen} />
+                <p>
+                  {likes} {likes === 1 ? 'like' : 'likes'}
+                </p>
+                <LikeButton post={post} />
+              </section>
+              {areCommentsOpen && (
+                <PostContext.Provider value={{ post }}>
+                  <Comments />
+                </PostContext.Provider>
+              )}
+            </>
+          )}
+        </div>
+      )}
     </article>
   );
 };

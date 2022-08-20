@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.nav`
   transition: all 0.5s ease-in-out;
   background-color: ${(props) => (props.bg ? props.bg : 'none')};
+  border-bottom: solid 2px;
   color: ${(props) => (props.color ? props.color : '#000')};
   position: fixed;
   padding: 0.5rem 0;
