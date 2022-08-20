@@ -28,14 +28,13 @@ export const Navbar = () => {
         <ul className={isMenuExpanded ? 'menu expanded' : 'menu'}>
           {config.links &&
             config.links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  to={`./${link.toLowerCase()}`}
-                  onClick={() => setIsMenuExpanded(false)}
-                >
-                  {link}
-                </Link>
-              </li>
+              <Link
+                key={index}
+                to={`./${link.toLowerCase()}`}
+                onClick={() => setIsMenuExpanded(false)}
+              >
+                <li>{link}</li>
+              </Link>
             ))}
         </ul>
       </section>
