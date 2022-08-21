@@ -11,7 +11,6 @@ export const StyledNavbar = styled.nav`
   top: 0;
   width: 100%;
   z-index: 5;
-  
 
   a {
     text-decoration: none;
@@ -43,15 +42,22 @@ export const StyledNavbar = styled.nav`
   .menu {
     display: flex;
     margin-left: auto;
+    gap: 1rem;
   }
 
   li {
     padding: 0 1rem;
     border: solid 3px;
     border-radius: 10rem;
-    margin: 0 0.5rem;
+    margin: 0;
     display: block;
     width: 100%;
+  }
+
+  li:hover,
+  span:hover {
+    background-color: #d0d0d0;
+    /* color: grey; */
   }
 
   .menu-button {
