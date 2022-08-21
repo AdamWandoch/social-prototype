@@ -10,6 +10,7 @@
   --clr-pr-blue-100: hsl(202, 40%, 55%);
   --clr-pr-blue-200: hsl(202, 50%, 50%);
   --clr-pr-blue: hsl(202, 80%, 34%);
+  --clr-pr-mixed: hsl(181, 71%, 32%);
   --clr-pr-purple-pink: hsl(278, 33%, 50%);
   --clr-pr-gray: hsl(0, 0%, 46%);
   --clr-hover: hsl(118, 75%, 50%);
@@ -166,9 +167,11 @@ h2 {
 
 .btn:hover,
 .btn:focus {
-  background-color: var(--clr-hover);
+  background-color: var(--clr-pr-mixed);
   cursor: pointer;
   transform: translateY(-2px);
+  color: white;
+  filter: drop-shadow(0 0 5px white);
 }
 
 .choose-img:hover,
@@ -192,7 +195,7 @@ h2 {
 .avatar:hover,
 .avatar:focus {
   transform: scale(var(--hover-scale));
-  border-color: var(--clr-hover);
+  border-color: var(--clr-pr-mixed);
   cursor: pointer;
 }
 

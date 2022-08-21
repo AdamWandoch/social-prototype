@@ -56,8 +56,7 @@ export const StyledNavbar = styled.nav`
 
   li:hover,
   span:hover {
-    background-color: #d0d0d0;
-    /* color: grey; */
+    background-color: #188b8d;
   }
 
   .menu-button {
