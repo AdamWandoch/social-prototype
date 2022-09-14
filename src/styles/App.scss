@@ -70,10 +70,10 @@ body {
 }
 
 h2 {
-  font-size: 0.8rem;
-  @media (min-width: 450px) {
-    font-size: 1rem;
-  }
+  font-size: 1rem;
+  // @media (min-width: 450px) {
+  //   font-size: 1rem;
+  // }
 }
 
 // UTILS
