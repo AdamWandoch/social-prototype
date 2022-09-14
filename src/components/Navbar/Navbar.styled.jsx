@@ -85,13 +85,19 @@ export const StyledNavbar = styled.nav`
     }
 
     .menu.expanded {
-      display: block;
+      display: grid;
+      grid-column: span 2;
+      gap: 4rem;
+      height: 92vh;
+      width: 100%;
+      align-content: center;
+      justify-content: center;
     }
 
     li {
-      width: 200%;
+      padding: 1rem 6rem;
+      font-size: 1.5rem;
       text-align: center;
-      margin: 2rem auto;
     }
   }
 `;
