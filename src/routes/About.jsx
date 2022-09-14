@@ -55,10 +55,11 @@ export const About = () => {
           <p>
             In this project I put to life modern JavaScript syntax using arrow
             functions, spread operators and object destructuring among others.
-            Overall it gave me a sense of understanding of how React handles and
-            manipulates state, how information can be collected and kept in
-            state using controlled forms and how to share/pass information
-            between components using props and context api.
+            For API calls I used Axios. Overall it gave me a sense of
+            understanding of how React handles and manipulates state, how
+            information can be collected and kept in state using controlled
+            forms and how to share/pass information between components using
+            props and context api.
           </p>
         </article>
       </section>
