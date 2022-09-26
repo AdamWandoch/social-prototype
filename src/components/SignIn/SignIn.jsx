@@ -18,7 +18,19 @@ export const SignIn = ({ setUser }) => {
         nickname: nickname,
         avatarId: avatarIndex,
       };
-      const resp = await axios.post(API_URL.concat('user/post'), user);
+      const resp = await axios
+        .post(API_URL.concat('user/post'), user)
+        .catch(function (error) {
+          if (error.response) {
+            console.log('Something went wrong');
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            alert(
+              'Oops, something went wrong. The request returned an error, try different details or contact support..'
+            );
+          }
+        });
       setUser(resp.data);
     };
     postUser();
