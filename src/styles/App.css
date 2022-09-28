@@ -141,6 +141,7 @@ h2 {
 .label {
   margin: 0.2rem 0;
   cursor: pointer;
+  text-align: center;
 }
 
 .text-input, .btn {
