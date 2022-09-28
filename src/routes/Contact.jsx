@@ -37,16 +37,23 @@ export const Contact = () => {
             target='_blank'
           >
             GitHub
-          </a>{' '}
-          and{' '}
+          </a>
+          ,{' '}
           <a
             href='https://www.youtube.com/channel/UCVIH7IAFxmwSxYid9r_2R9w'
             rel='noreferrer'
             target='_blank'
           >
             YouTube
-          </a>{' '}
-          or just simply{' '}
+          </a>
+          ,{' '}
+          <a
+            href='https://www.instagram.com/adamwandoch/'
+            rel='noreferrer'
+            target='_blank'
+          >
+            Instagram
+          </a>, or just simply{' '}
           <a href='mailto:wandoch.adam@google.com?subject=Contant from SocialAppPrototype'>
             DROP&nbsp;AN&nbsp;EMAIL
           </a>
