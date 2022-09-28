@@ -53,7 +53,8 @@ export const Contact = () => {
             target='_blank'
           >
             Instagram
-          </a>, or just simply{' '}
+          </a>
+          , or just simply{' '}
           <a href='mailto:wandoch.adam@google.com?subject=Contant from SocialAppPrototype'>
             DROP&nbsp;AN&nbsp;EMAIL
           </a>

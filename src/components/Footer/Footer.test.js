@@ -7,6 +7,6 @@ describe(Footer, () => {
   it('can display the correct content', () => {
     const { getByTestId } = render(<Footer />);
     const paragraph = getByTestId('paragraph');
-    expect(paragraph.textContent).toEqual(`Adam Wandoch ${year} -> GitHub`);
+    expect(paragraph.textContent).toEqual(`Adam Wandoch ${year}`);
   });
 });
