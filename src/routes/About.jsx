@@ -1,9 +1,17 @@
 import React from 'react';
+import photo from '../img/me2.png';
 import '../styles/content-styles.css';
 
 export const About = () => {
   return (
     <main>
+      <a
+        href='https://www.linkedin.com/in/adam-wandoch/'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <img src={photo} alt='Adam' className='portrait' />
+      </a>
       <section>
         <h1>Social Application Prototype - what is this?</h1>
         <h2>Project description</h2>

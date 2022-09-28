@@ -1,10 +1,18 @@
 import React from 'react';
+import photo from '../img/me2.png';
 import '../styles/content-styles.css';
 
 export const Contact = () => {
   return (
     <main>
       <article>
+        <a
+          href='https://www.linkedin.com/in/adam-wandoch/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={photo} alt='Adam' className='portrait' />
+        </a>
         <h1>Get to know me!</h1>
         <h2>How to get in touch?</h2>
         <p>
