@@ -9,6 +9,7 @@ import { About } from './routes/About';
 import { Contact } from './routes/Contact';
 import { Error } from './routes/Error';
 import { Navbar } from './components/Navbar/Navbar';
+import { ChatBubble } from './components/ChatBubble/ChatBubble';
 import './styles/App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='*' element={<Error />}></Route>
       </Routes>
       <Footer />
+      <ChatBubble />
     </GlobalContext.Provider>
   );
 }
